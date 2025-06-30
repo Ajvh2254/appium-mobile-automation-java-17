@@ -50,8 +50,16 @@ public class AndroidDriverManager {
     private static void setDriverTimeouts() {
     }
 
-    private UiAutomator2Options androidCapabilities() {
+    private UiAutomator2Options APIDemosCapabilities() {
         return uiAutomator2Options = new UiAutomator2Options();
+    }
+
+    private UiAutomator2Options GeneralStoreCapabilities() {
+        return uiAutomator2Options = new UiAutomator2Options();
+    }
+
+    public static void quitAndroidDriver() {
+        DRIVER.get().quit();
     }
 
 }
