@@ -20,9 +20,9 @@ import java.util.stream.Collectors;
 public class AndroidDriverManager {
 
     private static final ThreadLocal<AndroidDriver> DRIVER = new ThreadLocal<>();
-    private UiAutomator2Options uiAutomator2Options;
+    private static UiAutomator2Options uiAutomator2Options;
 
-    public void createAndroidDriver() {
+    public static void createAndroidDriver() {
         try {
             if (Config.AUTO_EMULATOR_START) {
                 resetADB();
@@ -127,7 +127,7 @@ public class AndroidDriverManager {
 //                .implicitlyWait(Duration.ofSeconds(10));
     }
 
-    private UiAutomator2Options APIDemosCapabilities() {
+    private static UiAutomator2Options APIDemosCapabilities() {
         return uiAutomator2Options = new UiAutomator2Options()
                 .setAvd("Pixel_8_Pro")
                 .setApp("apps/ApiDemos-debug.apk")
