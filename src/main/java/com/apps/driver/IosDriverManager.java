@@ -22,8 +22,4 @@ public class IosDriverManager {
         return xcuiTestOptions;
     }
 
-    public static void quitIosDriver() {
-        IOS_DRIVER.get().quit();
-    }
-
 }
