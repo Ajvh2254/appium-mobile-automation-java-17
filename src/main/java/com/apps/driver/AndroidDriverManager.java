@@ -28,6 +28,7 @@ public class AndroidDriverManager {
                 resetADB();
                 autoEmulatorStart();
             }
+            System.out.println("Initiating android driver, add capabilitites and install app");
             setDriver(new AndroidDriver(new URL("http://localhost:4723"), APIDemosCapabilities()));
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -51,11 +52,6 @@ public class AndroidDriverManager {
                 throw new RuntimeException(ex.getMessage());
             }
         }
-    }
-
-    public static void clean() {
-        executeTerminalCommand("adb", "kill-server");
-        executeTerminalCommand("killall", "qemu-system-aarch64");
     }
 
     public static Process executeTerminalCommand(String... args) {
@@ -119,12 +115,6 @@ public class AndroidDriverManager {
 
     private static void setDriver(AndroidDriver driver) {
         AndroidDriverManager.DRIVER.set(driver);
-    }
-
-    private static void setDriverTimeouts() {
-//        getAndroidDriver().manage()
-//                .timeouts()
-//                .implicitlyWait(Duration.ofSeconds(10));
     }
 
     private static UiAutomator2Options APIDemosCapabilities() {
