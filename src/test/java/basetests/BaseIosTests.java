@@ -1,6 +1,8 @@
 package basetests;
 
 import appiumfactory.driver.AppiumDriverManager;
+import appiumfactory.driver.IosDriverManager;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseIosTests {
@@ -13,6 +15,13 @@ public class BaseIosTests {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        IosDriverManager.createIosDriver();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        AppiumDriverManager.stopAppium();
+        IosDriverManager.quitIosDriver();
     }
 
 }
