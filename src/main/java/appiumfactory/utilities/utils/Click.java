@@ -10,6 +10,10 @@ import org.openqa.selenium.remote.RemoteWebElement;
 
 public class Click extends BasePage {
 
+    public Click() {
+        super();
+    }
+
     public void androidClick(By locator) {
         System.out.println("Clicking on element: " + locator);
         try {
