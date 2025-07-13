@@ -2,7 +2,7 @@ package appiumfactory.base;
 
 import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.utilities.AndroidWaiter;
-import appiumfactory.utilities.utils.Click;
+import appiumfactory.utilities.Click;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 

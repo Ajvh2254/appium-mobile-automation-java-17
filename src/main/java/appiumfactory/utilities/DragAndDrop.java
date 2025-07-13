@@ -1,4 +1,4 @@
-package appiumfactory.utilities.utils;
+package appiumfactory.utilities;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
