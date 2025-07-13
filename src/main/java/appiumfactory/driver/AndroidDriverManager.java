@@ -47,4 +47,10 @@ public class AndroidDriverManager {
                 .setNoReset(false);
     }
 
+    private static UiAutomator2Options generalStoreCapabilities() {
+        return uiAutomator2Options = new UiAutomator2Options()
+                .setDeviceName("Pixel_8_Pro")
+                .setApp("apps/General-Store.apk");
+    }
+
 }

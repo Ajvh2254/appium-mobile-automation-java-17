@@ -1,6 +1,6 @@
 package appiumtests.androidtests;
 
-import appiumfactory.appiumcourse.WifiPage;
+import appiumfactory.appiumcourse.apidemos.WifiPage;
 import basetests.BaseAndroidTests;
 import org.testng.annotations.Test;
 

@@ -1,4 +1,4 @@
-package appiumfactory.appiumcourse;
+package appiumfactory.appiumcourse.apidemos;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
