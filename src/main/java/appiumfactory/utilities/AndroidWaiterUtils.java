@@ -1,4 +1,4 @@
-package appiumfactory.utilities.utils;
+package appiumfactory.utilities;
 
 import appiumfactory.driver.AndroidDriverManager;
 import io.appium.java_client.android.AndroidDriver;
@@ -16,18 +16,17 @@ public class AndroidWaiterUtils {
         PageFactory.initElements(new AppiumFieldDecorator(AndroidDriverManager.getAndroidDriver()), this);
     }
 
-    public void waitForVisibilityOfElement(AndroidDriver driver, int seconds, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+    WebDriverWait wait = new WebDriverWait(AndroidDriverManager.getAndroidDriver(), Duration.ofSeconds(30));
+
+    public void waitForVisibilityOfElement(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public void waitForInvisibilityOfElement(AndroidDriver driver, int seconds, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+    public void waitForInvisibilityOfElement(By locator) {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
-    public void waitForElementToBeClickable(AndroidDriver driver, int seconds, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+    public void waitForElementToBeClickable(By locator) {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
