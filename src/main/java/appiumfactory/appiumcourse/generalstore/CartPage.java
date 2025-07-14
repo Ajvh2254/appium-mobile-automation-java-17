@@ -8,4 +8,8 @@ public class CartPage extends BasePage {
         super();
     }
 
+    public CartPage isCartPageDisplayed() {
+        return this;
+    }
+
 }
