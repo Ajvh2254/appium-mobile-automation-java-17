@@ -64,6 +64,12 @@ public class GeneralStoreTests extends BaseGeneralStoreTests {
                 .clickCartBtn();
 
         CartPage cartPage = new CartPage();
+        cartPage.isCartPageDisplayed()
+                .getProductTotal()
+                .longClickTermsBtn()
+                .clickCloseBtn()
+                .clickEmailsCheckbox()
+                .clickCompletePurchaseBtn();
     }
 
 }
