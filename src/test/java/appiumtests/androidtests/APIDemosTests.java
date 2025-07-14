@@ -1,10 +1,7 @@
 package appiumtests.androidtests;
 
 import appiumfactory.appiumcourse.apidemos.CommonPage;
-import appiumfactory.appiumcourse.apidemos.pages.ExpandableListsPage;
-import appiumfactory.appiumcourse.apidemos.pages.PhotosPage;
-import appiumfactory.appiumcourse.apidemos.pages.ViewsPage;
-import appiumfactory.appiumcourse.apidemos.pages.WifiPage;
+import appiumfactory.appiumcourse.apidemos.pages.*;
 import basetests.BaseAPIDemosTests;
 import org.testng.annotations.Test;
 
@@ -59,6 +56,16 @@ public class APIDemosTests extends BaseAPIDemosTests {
                 .isImageFocused()
                 .swipeToNewImage()
                 .isImageNotFocused();
+    }
+
+    @Test
+    public void dragAndDropTest() {
+        CommonPage.clickViewsBtn();
+
+        DragAndDropPage dragAndDropPage = new DragAndDropPage();
+        dragAndDropPage.clickDragANdDropBtn()
+                .dragAndDropElement()
+                .assertElementWasDropped();
     }
 
 }
