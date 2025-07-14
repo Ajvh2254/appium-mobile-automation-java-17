@@ -11,6 +11,11 @@ public class LandingPage extends BasePage {
     }
 
     public LandingPage clickCountryDropdown() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         click.androidClick(By.xpath("android:id/text1"));
         return this;
     }
