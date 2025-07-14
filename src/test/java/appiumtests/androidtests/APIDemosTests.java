@@ -68,4 +68,19 @@ public class APIDemosTests extends BaseAPIDemosTests {
                 .assertElementWasDropped();
     }
 
+    @Test
+    public void startAppActivityTest() {
+        WifiPage wifiPage = new WifiPage();
+        wifiPage.startAppActivity()
+                .clickCheckboxBtn()
+                .rotateScreen()
+                .clickWifiSettingsBtn()
+                .getAlertTitleText()
+                .getClipboardText()
+                .pressEnterKey()
+                .clickOkBtn()
+                .pressBackKey()
+                .pressHomeKey();
+    }
+
 }
