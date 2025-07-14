@@ -1,5 +1,6 @@
 package appiumfactory.driver;
 
+import appiumfactory.base.BasePage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
@@ -13,10 +14,19 @@ public class AndroidDriverManager {
     private static final ThreadLocal<AndroidDriver> DRIVER = new ThreadLocal<>();
     private static UiAutomator2Options uiAutomator2Options;
 
-    public static void createAndroidDriver() {
+    public static void createAPIDemosDriver() {
         try {
             System.out.println("Initiating android driver, add capabilities and install app");
             setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), androidApiDemosCapabilities()));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createGeneralStoreDriver() {
+        try {
+            System.out.println("Initiating android driver, add capabilities and install app");
+            setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), generalStoreCapabilities()));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -32,6 +42,7 @@ public class AndroidDriverManager {
 
     private static void setAndroidDriver(AndroidDriver driver) {
         AndroidDriverManager.DRIVER.set(driver);
+        BasePage.initializeUtilities();
     }
 
     private static UiAutomator2Options androidApiDemosCapabilities() {

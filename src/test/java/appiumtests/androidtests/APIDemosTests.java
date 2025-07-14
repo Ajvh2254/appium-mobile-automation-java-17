@@ -3,10 +3,10 @@ package appiumtests.androidtests;
 import appiumfactory.appiumcourse.apidemos.CommonPage;
 import appiumfactory.appiumcourse.apidemos.pages.ExpandableListsPage;
 import appiumfactory.appiumcourse.apidemos.pages.WifiPage;
-import basetests.BaseAndroidTests;
+import basetests.BaseAPIDemosTests;
 import org.testng.annotations.Test;
 
-public class AppiumTests extends BaseAndroidTests {
+public class APIDemosTests extends BaseAPIDemosTests {
 
     @Test
     public void wifiSettingsTest() {
