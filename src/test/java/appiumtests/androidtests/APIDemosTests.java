@@ -2,6 +2,7 @@ package appiumtests.androidtests;
 
 import appiumfactory.appiumcourse.apidemos.CommonPage;
 import appiumfactory.appiumcourse.apidemos.pages.ExpandableListsPage;
+import appiumfactory.appiumcourse.apidemos.pages.ViewsPage;
 import appiumfactory.appiumcourse.apidemos.pages.WifiPage;
 import basetests.BaseAPIDemosTests;
 import org.testng.annotations.Test;
@@ -29,6 +30,22 @@ public class APIDemosTests extends BaseAPIDemosTests {
                 .clickCustomAdapterBtn()
                 .longClickPeopleNamesBtn()
                 .isSampleMenuDisplayed();
+    }
+
+    @Test
+    public void scrollTest() {
+        CommonPage.clickViewsBtn();
+
+        ViewsPage viewsPage = new ViewsPage();
+        viewsPage.scrollDownViewsPage();
+    }
+
+    @Test
+    public void scrollIntoViewTest() {
+        CommonPage.clickViewsBtn();
+
+        ViewsPage viewsPage = new ViewsPage();
+        viewsPage.scrollWebViewIntoView();
     }
 
 }

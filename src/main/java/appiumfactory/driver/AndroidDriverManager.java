@@ -42,7 +42,6 @@ public class AndroidDriverManager {
 
     private static void setAndroidDriver(AndroidDriver driver) {
         AndroidDriverManager.DRIVER.set(driver);
-        BasePage.initializeUtilities();
     }
 
     private static UiAutomator2Options androidApiDemosCapabilities() {
