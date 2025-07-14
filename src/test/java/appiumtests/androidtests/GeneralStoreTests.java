@@ -3,6 +3,7 @@ package appiumtests.androidtests;
 import appiumfactory.appiumcourse.generalstore.CartPage;
 import appiumfactory.appiumcourse.generalstore.LandingPage;
 import appiumfactory.appiumcourse.generalstore.ProductPage;
+import appiumfactory.utilities.Sleep;
 import basetests.BaseGeneralStoreTests;
 import org.testng.annotations.Test;
 
@@ -33,11 +34,7 @@ public class GeneralStoreTests extends BaseGeneralStoreTests {
 
     @Test
     public void addProductToCartTest() {
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Sleep.sleep(5000);
         landingPage.sendNameKeys()
                 .hideKeyboard();
 
