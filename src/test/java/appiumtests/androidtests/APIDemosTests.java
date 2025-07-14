@@ -2,6 +2,7 @@ package appiumtests.androidtests;
 
 import appiumfactory.appiumcourse.apidemos.CommonPage;
 import appiumfactory.appiumcourse.apidemos.pages.ExpandableListsPage;
+import appiumfactory.appiumcourse.apidemos.pages.PhotosPage;
 import appiumfactory.appiumcourse.apidemos.pages.ViewsPage;
 import appiumfactory.appiumcourse.apidemos.pages.WifiPage;
 import basetests.BaseAPIDemosTests;
@@ -46,6 +47,18 @@ public class APIDemosTests extends BaseAPIDemosTests {
 
         ViewsPage viewsPage = new ViewsPage();
         viewsPage.scrollWebViewIntoView();
+    }
+
+    @Test
+    public void swipeTest() {
+        CommonPage.clickViewsBtn();
+
+        PhotosPage photosPage = new PhotosPage();
+        photosPage.clickGalleryBtn()
+                .clickPhotosBtn()
+                .isImageFocused()
+                .swipeToNewImage()
+                .isImageNotFocused();
     }
 
 }
