@@ -3,6 +3,7 @@ package appiumfactory.appiumcourse.generalstore;
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class LandingPage extends BasePage {
 
@@ -53,8 +54,15 @@ public class LandingPage extends BasePage {
         return this;
     }
 
-    public void clickLetsShopBtn() {
+    public LandingPage clickLetsShopBtn() {
         click.androidClick(By.id("com.androidsample.generalstore:id/btnLetsShop"));
+        return this;
+    }
+
+    public void handleToastMessage() {
+        String toastMessage = AndroidDriverManager.getAndroidDriver().findElement(
+                By.xpath("(//android.widget.Toast)[1]")).getDomAttribute("name");
+        Assert.assertEquals(toastMessage, "Please enter your name");
     }
 
 }
