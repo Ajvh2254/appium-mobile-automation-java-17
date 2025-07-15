@@ -10,7 +10,6 @@ import org.testng.Assert;
 public class PhotosPage extends BasePage {
 
     By image = By.xpath("//android.widget.ImageView[1]");
-    WebElement firstImage = AndroidDriverManager.getAndroidDriver().findElement(image);
 
     public PhotosPage() {
         super();
@@ -27,6 +26,7 @@ public class PhotosPage extends BasePage {
     }
 
     public PhotosPage isImageFocused() {
+        WebElement firstImage = AndroidDriverManager.getAndroidDriver().findElement(image);
         Assert.assertEquals(firstImage.getDomAttribute("focusable"), "true");
         return this;
     }
@@ -37,6 +37,7 @@ public class PhotosPage extends BasePage {
     }
 
     public void isImageNotFocused() {
+        WebElement firstImage = AndroidDriverManager.getAndroidDriver().findElement(image);
         Assert.assertEquals(firstImage.getDomAttribute("focusable"), "false");
     }
 

@@ -1,5 +1,6 @@
 package appiumfactory.driver;
 
+import appiumfactory.base.BasePage;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 
@@ -31,6 +32,7 @@ public class IosDriverManager {
 
     private static void setIosDriver(final IOSDriver iosDriver) {
         IosDriverManager.IOS_DRIVER.set(iosDriver);
+        BasePage.initializeUtilities();
     }
 
     private static XCUITestOptions uiKitCapabilities() {

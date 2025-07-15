@@ -2,7 +2,6 @@ package appiumfactory.appiumcourse.generalstore;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
-import appiumfactory.utilities.Sleep;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -13,8 +12,7 @@ public class LandingPage extends BasePage {
     }
 
     public LandingPage clickCountryDropdown() {
-        Sleep.sleep(5000);
-        click.androidClick(By.xpath("android:id/text1"));
+        click.androidClick(By.id("android:id/text1"));
         return this;
     }
 
@@ -30,7 +28,6 @@ public class LandingPage extends BasePage {
     }
 
     public LandingPage sendNameKeys() {
-        Sleep.sleep(5000);
         AndroidDriverManager.getAndroidDriver().findElement(By.xpath(
                 "//android.widget.EditText[@resource-id='com.androidsample.generalstore:id/nameField']"))
                 .sendKeys("Ray Fitzgerald");

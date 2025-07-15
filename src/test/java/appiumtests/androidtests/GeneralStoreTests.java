@@ -3,16 +3,14 @@ package appiumtests.androidtests;
 import appiumfactory.appiumcourse.generalstore.CartPage;
 import appiumfactory.appiumcourse.generalstore.LandingPage;
 import appiumfactory.appiumcourse.generalstore.ProductPage;
-import appiumfactory.utilities.Sleep;
 import basetests.BaseGeneralStoreTests;
 import org.testng.annotations.Test;
 
 public class GeneralStoreTests extends BaseGeneralStoreTests {
 
-    LandingPage landingPage = new LandingPage();
-
     @Test
     public void landingPageTest() {
+        LandingPage landingPage = new LandingPage();
         landingPage.clickCountryDropdown()
                 .scrollCountryDropdown()
                 .clickCountryBtn()
@@ -24,6 +22,7 @@ public class GeneralStoreTests extends BaseGeneralStoreTests {
 
     @Test
     public void toastMessageTest() {
+        LandingPage landingPage = new LandingPage();
         landingPage.clickCountryDropdown()
                 .scrollCountryDropdown()
                 .clickCountryBtn()
@@ -34,18 +33,21 @@ public class GeneralStoreTests extends BaseGeneralStoreTests {
 
     @Test
     public void addProductToCartTest() {
-        Sleep.sleep(5000);
+        LandingPage landingPage = new LandingPage();
         landingPage.sendNameKeys()
-                .hideKeyboard();
+                .hideKeyboard()
+                .clickLetsShopBtn();
 
         ProductPage productPage = new ProductPage();
-        productPage.scrollProductIntoView()
+        productPage.isProductPageDisplayed()
+                .scrollProductIntoView()
                 .addProductToCart()
                 .clickCartBtn();
     }
 
     @Test
     public void shoppingTest() {
+        LandingPage landingPage = new LandingPage();
         landingPage.clickCountryDropdown()
                 .scrollCountryDropdown()
                 .clickCountryBtn()

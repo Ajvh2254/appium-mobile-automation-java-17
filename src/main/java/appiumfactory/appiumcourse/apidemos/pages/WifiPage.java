@@ -56,7 +56,7 @@ public class WifiPage extends BasePage {
     public WifiPage getAlertTitleText() {
         String alertTitle = AndroidDriverManager.getAndroidDriver().findElement(
                 By.id("android:id/alertTitle")).getText();
-        Assert.assertEquals(alertTitle, "Wifi settings");
+        Assert.assertEquals(alertTitle, "WiFi settings");
         return this;
     }
 
