@@ -1,21 +1,21 @@
 package basetests;
 
+import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.driver.AppiumDriverManager;
-import appiumfactory.driver.IosDriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseIosTests {
+public class BaseAPIDemosTests {
 
     @BeforeMethod
-    public void initiateIos() {
+    public void initiateApiDemos() {
         AppiumDriverManager.startAppium();
-        IosDriverManager.createIosDriver();
+        AndroidDriverManager.createAPIDemosDriver();
     }
 
     @AfterMethod
     public void tearDown() {
-        IosDriverManager.quitIosDriver();
+        AndroidDriverManager.quitAndroidDriver();
         AppiumDriverManager.stopAppium();
     }
 
