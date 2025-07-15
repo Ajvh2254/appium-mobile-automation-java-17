@@ -1,6 +1,5 @@
 package appiumfactory.driver;
 
-import appiumfactory.base.BasePage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;

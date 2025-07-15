@@ -1,5 +1,6 @@
 package basetests;
 
+import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.driver.AppiumDriverManager;
 import appiumfactory.utilities.Sleep;
@@ -12,7 +13,8 @@ public class BaseAPIDemosTests {
     public void initiateApiDemos() {
         AppiumDriverManager.startAppium();
         AndroidDriverManager.createAPIDemosDriver();
-        Sleep.sleep(10000);
+        BasePage.initializeUtilities();
+        Sleep.sleep(5000);
     }
 
     @AfterMethod
