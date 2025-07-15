@@ -21,6 +21,7 @@ public class AndroidDriverManager {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+        setDriverTimeout();
     }
 
     public static void createGeneralStoreDriver() {
@@ -44,6 +45,12 @@ public class AndroidDriverManager {
         AndroidDriverManager.DRIVER.set(driver);
     }
 
+    private static void setDriverTimeout() {
+        getAndroidDriver().manage()
+                .timeouts()
+                .implicitlyWait(Duration.ofSeconds(10));
+    }
+
     private static UiAutomator2Options androidApiDemosCapabilities() {
         return uiAutomator2Options = new UiAutomator2Options()
                 .setAvd("Pixel_8_Pro")
@@ -52,8 +59,8 @@ public class AndroidDriverManager {
                 .setAppPackage("io.appium.android.apis")
                 .setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2)
                 .setAutoGrantPermissions(true)
-                .setAvdLaunchTimeout(Duration.ofSeconds(20))
-                .setAvdReadyTimeout(Duration.ofSeconds(20))
+                .setAvdLaunchTimeout(Duration.ofSeconds(60))
+                .setAvdReadyTimeout(Duration.ofSeconds(60))
                 .setNoReset(false);
     }
 

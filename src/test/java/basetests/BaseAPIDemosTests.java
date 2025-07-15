@@ -11,8 +11,8 @@ public class BaseAPIDemosTests {
     @BeforeMethod
     public void initiateApiDemos() {
         AppiumDriverManager.startAppium();
-        Sleep.sleep(20000);
         AndroidDriverManager.createAPIDemosDriver();
+        Sleep.sleep(10000);
     }
 
     @AfterMethod

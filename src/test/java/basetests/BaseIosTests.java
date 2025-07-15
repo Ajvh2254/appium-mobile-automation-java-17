@@ -11,8 +11,8 @@ public class BaseIosTests {
     @BeforeMethod
     public void initiateIos() {
         AppiumDriverManager.startAppium();
-        Sleep.sleep(20000);
         IosDriverManager.createIosDriver();
+        Sleep.sleep(10000);
     }
 
     @AfterMethod

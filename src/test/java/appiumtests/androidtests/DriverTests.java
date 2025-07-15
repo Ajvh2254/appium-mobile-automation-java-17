@@ -1,22 +1,17 @@
-package basetests;
+package appiumtests.androidtests;
 
 import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.driver.AppiumDriverManager;
 import appiumfactory.utilities.Sleep;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-public class BaseGeneralStoreTests {
+public class DriverTests {
 
-    @BeforeMethod
-    public void initiateGeneralStore() {
+    @Test
+    public void test() {
         AppiumDriverManager.startAppium();
-        AndroidDriverManager.createGeneralStoreDriver();
+        AndroidDriverManager.createAPIDemosDriver();
         Sleep.sleep(10000);
-    }
-
-    @AfterMethod
-    public void tearDown() {
         AppiumDriverManager.stopAppium();
         AndroidDriverManager.quitAndroidDriver();
     }
