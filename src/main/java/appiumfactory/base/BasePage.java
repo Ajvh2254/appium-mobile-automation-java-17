@@ -2,6 +2,7 @@ package appiumfactory.base;
 
 import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.utilities.*;
+import appiumfactory.utilities.androidutils.PressKey;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
