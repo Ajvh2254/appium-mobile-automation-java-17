@@ -11,6 +11,7 @@ public class BasePage {
     protected static Click click;
     protected static DragAndDrop dragAndDrop;
     protected static IsDisplayed isDisplayed;
+    protected static PressKey pressKey;
     protected static Scroll scroll;
     protected static Swipe swipe;
 
@@ -23,6 +24,7 @@ public class BasePage {
         click = new Click();
         dragAndDrop = new DragAndDrop();
         isDisplayed = new IsDisplayed();
+        pressKey = new PressKey();
         scroll = new Scroll();
         swipe = new Swipe();
     }

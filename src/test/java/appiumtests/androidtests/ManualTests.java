@@ -16,13 +16,13 @@ public class ManualTests extends BaseAPIDemosTests {
                 .isAPIDemosIconsDisplayed()
                 .clickNodeProviderBtn()
                 .isNodeProviderHeaderDisplayed()
-                .pressBackKey()
+                .pressAndroidBackKey()
                 .clickNodeQueryingBtn()
                 .isNodeQueryHeaderDisplayed()
-                .pressBackKey()
+                .pressAndroidBackKey()
                 .clickServiceBtn()
                 .isServiceHeaderDisplayed()
-                .pressBackKey()
+                .pressAndroidBackKey()
                 .clickCustomViewBtn()
                 .isCustomViewHeaderDisplayed();
     }

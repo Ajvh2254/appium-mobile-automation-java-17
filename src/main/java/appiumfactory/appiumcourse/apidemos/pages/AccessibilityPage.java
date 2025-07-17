@@ -35,8 +35,8 @@ public class AccessibilityPage extends BasePage {
         return this;
     }
 
-    public AccessibilityPage pressBackKey() {
-        AndroidDriverManager.getAndroidDriver().pressKey(new KeyEvent(AndroidKey.BACK));
+    public AccessibilityPage pressAndroidBackKey() {
+        pressKey.pressBackKey();
         return this;
     }
 
