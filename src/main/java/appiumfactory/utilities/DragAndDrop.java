@@ -15,13 +15,13 @@ public class DragAndDrop extends BasePage {
     }
 
     public void dragAndDrop(By locator, int x, int y) {
-        System.out.println(locator + " was dragged and dropped");
         WebElement source = AndroidDriverManager.getAndroidDriver().findElement(locator);
         ((JavascriptExecutor) AndroidDriverManager.getAndroidDriver()).executeScript("mobile: dragGesture", ImmutableMap.of(
                 "elementId", ((RemoteWebElement) source).getId(),
                 "endX", x,
                 "endY", y
         ));
+        System.out.println(locator + " was dragged and dropped");
     }
 
 }

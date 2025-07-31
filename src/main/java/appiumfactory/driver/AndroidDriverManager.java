@@ -16,8 +16,8 @@ public class AndroidDriverManager {
 
     public static void createAPIDemosDriver() {
         try {
-            System.out.println("Initiating android driver, add capabilities and install app");
             setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), androidApiDemosCapabilities()));
+            System.out.println("Initiating android driver, add capabilities and install app");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -26,8 +26,8 @@ public class AndroidDriverManager {
 
     public static void createGeneralStoreDriver() {
         try {
-            System.out.println("Initiating android driver, add capabilities and install app");
             setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), generalStoreCapabilities()));
+            System.out.println("Initiating android driver, add capabilities and install app");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

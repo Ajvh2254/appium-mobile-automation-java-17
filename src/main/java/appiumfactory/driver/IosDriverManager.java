@@ -15,8 +15,8 @@ public class IosDriverManager {
 
     public static void createIosDriver() {
         try {
-            System.out.println("Initiating ios driver, add capabilities and install app");
             setIosDriver(new IOSDriver(new URL("http://localhost:4723"), uiKitCapabilities()));
+            System.out.println("Initiating ios driver, add capabilities and install app");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

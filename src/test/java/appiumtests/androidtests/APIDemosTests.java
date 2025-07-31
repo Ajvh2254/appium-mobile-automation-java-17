@@ -77,10 +77,10 @@ public class APIDemosTests extends BaseAPIDemosTests {
                 .clickWifiSettingsBtn()
                 .getAlertTitleText()
                 .getClipboardText()
-                .pressEnterKey()
+                .pressAndroidEnterKey()
                 .clickOkBtn()
-                .pressBackKey()
-                .pressHomeKey();
+                .pressAndroidBackKey()
+                .pressAndroidHomeKey();
     }
 
 }

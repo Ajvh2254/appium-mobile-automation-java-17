@@ -67,9 +67,8 @@ public class WifiPage extends BasePage {
         return this;
     }
 
-    public WifiPage pressEnterKey() {
-        AndroidDriverManager.getAndroidDriver().pressKey(new KeyEvent(
-                AndroidKey.ENTER));
+    public WifiPage pressAndroidEnterKey() {
+        pressKey.pressEnterKey();
         return this;
     }
 
@@ -85,15 +84,13 @@ public class WifiPage extends BasePage {
         return this;
     }
 
-    public WifiPage pressBackKey() {
-        AndroidDriverManager.getAndroidDriver().pressKey(new KeyEvent(
-                AndroidKey.BACK));
+    public WifiPage pressAndroidBackKey() {
+        pressKey.pressBackKey();
         return this;
     }
 
-    public void pressHomeKey() {
-        AndroidDriverManager.getAndroidDriver().pressKey(new KeyEvent(
-                AndroidKey.HOME));
+    public void pressAndroidHomeKey() {
+        pressKey.pressHomeKey();
     }
 
 }
