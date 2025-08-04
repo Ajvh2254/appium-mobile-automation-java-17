@@ -1,6 +1,7 @@
 package appiumtests.androidtests;
 
 import appiumfactory.appiumcourse.apidemos.pages.AccessibilityPage;
+import appiumfactory.appiumcourse.apidemos.pages.AnimationPage;
 import basetests.BaseAPIDemosTests;
 import org.testng.annotations.Test;
 
@@ -25,6 +26,17 @@ public class ManualTests extends BaseAPIDemosTests {
                 .pressAndroidBackKey()
                 .clickCustomViewBtn()
                 .isCustomViewHeaderDisplayed();
+    }
+
+    @Test
+    public void animationPageTest() {
+        AnimationPage animationPage = new AnimationPage();
+        animationPage.isAPIDemosHeaderDisplayed()
+                .clickAnimationBtn()
+                .isAPIDemosTitleDisplayed()
+                .clickBouncingBallsBtn()
+                .isBouncingBallsLogoDisplayed()
+                .pressAndroidBackKey();
     }
 
 }
