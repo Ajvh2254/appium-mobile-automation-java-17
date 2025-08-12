@@ -4,6 +4,7 @@ import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -47,8 +48,22 @@ public class AnimationPage extends BasePage {
         return this;
     }
 
-    public AnimationPage isCloningBtnClickable() {
+    public AnimationPage isCloningBtnFocusable() {
+        WebElement cloningBtn = AndroidDriverManager.getAndroidDriver().findElement(
+                AppiumBy.accessibilityId("Cloning"));
+        Assert.assertEquals(cloningBtn.getDomAttribute("focusable"), "false");
         return this;
+    }
+
+    public AnimationPage isCloningBtnClickable() {
+        androidWaiter.waitForElementToBeClickable(AppiumBy.accessibilityId("Cloning"));
+        return this;
+    }
+
+    public AnimationPage clickCloningBtn() {
+            AndroidDriverManager.getAndroidDriver().findElement(
+                    AppiumBy.accessibilityId("Cloning")).click();
+            return this;
     }
 
 }

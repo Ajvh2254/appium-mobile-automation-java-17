@@ -37,12 +37,12 @@ public class IosDriverManager {
 
     private static XCUITestOptions uiKitCapabilities() {
         return xcuiTestOptions = new XCUITestOptions()
-                .setDeviceName("iPhone 16 Plus")
-                .setPlatformVersion("18.5")
-                .setApp("/Users/anthonyhenderson/Downloads/iosApps/UIKitCatalog.app")
-                .setBundleId("com.example.apple-samplecode.UICatalog")
+                .setDeviceName("iPhone 16 Pro")
+                .setPlatformVersion("18.6")
+                .setApp("apps/UIKitCatalog.app")
+                .setBundleId("com.example.apple-samplecode.UIKitCatalog")
                 .setAutomationName("XCuiTest")
-                .setWdaLaunchTimeout(Duration.ofSeconds(20));
+                .setWdaLaunchTimeout(Duration.ofSeconds(60));
     }
 
 }
