@@ -11,7 +11,6 @@ import org.openqa.selenium.remote.RemoteWebElement;
 public class Swipe extends BasePage {
 
     public void swipe(By locator) {
-        System.out.println("Swipes to new image: " + locator);
         WebElement element = AndroidDriverManager.getAndroidDriver().findElement(locator);
         ((JavascriptExecutor) AndroidDriverManager.getAndroidDriver()).executeScript(
                 "mobile: swipeGesture", ImmutableMap.of(
@@ -19,6 +18,7 @@ public class Swipe extends BasePage {
                         "direction", "left",
                         "percent", 0.25
                 ));
+        System.out.println("Swiped to new image: " + locator);
     }
 
 }

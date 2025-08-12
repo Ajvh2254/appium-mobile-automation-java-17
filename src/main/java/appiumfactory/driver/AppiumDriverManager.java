@@ -26,8 +26,8 @@ public class AppiumDriverManager {
 
     public static void stopAppium() {
         if (appiumExists()) {
-            System.out.println("Stopping Appium service");
             appiumService.stop();
+            System.out.println("Stopped Appium service");
         }
     }
 

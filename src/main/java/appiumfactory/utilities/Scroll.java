@@ -13,7 +13,6 @@ public class Scroll extends BasePage {
     }
 
     public void scroll() {
-        System.out.println("Scrolls down page");
         boolean canScrollMore;
         do {
             canScrollMore = (Boolean) ((JavascriptExecutor) AndroidDriverManager.getAndroidDriver()).executeScript(
@@ -22,14 +21,15 @@ public class Scroll extends BasePage {
                             "direction", "down",
                             "percent", 1.0
                     ));
+        System.out.println("Scrolled down page");
         } while (canScrollMore);
     }
 
     public void scrollIntoView(String text) {
-        System.out.println("Scrolls " + text + " into view");
         AndroidDriverManager.getAndroidDriver().findElement(AppiumBy.androidUIAutomator(
                 "new UiScrollable(new UiSelector()).scrollIntoView(text(\""+ text +"\"));"
         ));
+        System.out.println("Scrolled " + text + " into view");
     }
 
 }
