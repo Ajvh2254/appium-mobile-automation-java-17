@@ -18,7 +18,7 @@ public class Click extends BasePage {
         try {
             androidWaiter.waitForElementToBeClickable(locator);
             AndroidDriverManager.getAndroidDriver().findElement(locator).click();
-        System.out.println("Clicked on element: " + locator);
+            System.out.println("Clicked on element: " + locator);
         } catch (Exception e) {
             System.out.println("Failed to click on element: " + locator);
             e.printStackTrace();
@@ -32,7 +32,7 @@ public class Click extends BasePage {
                     "mobile: clickGesture", ImmutableMap.of(
                             "elementId", ((RemoteWebElement) element).getId()
                     ));
-        System.out.println("Clicked on element: " + locator + " with mobile click gesture");
+            System.out.println("Clicked on element: " + locator + " with mobile click gesture");
         } catch (Exception e) {
             System.out.println("Failed to click on element: " + locator);
             e.printStackTrace();
@@ -47,7 +47,7 @@ public class Click extends BasePage {
                     "mobile: longClickGesture", ImmutableMap.of(
                             "elementId", ((RemoteWebElement) element).getId(),
                             "duration", milliseconds));
-        System.out.println("Long pressed element: " + locator);
+            System.out.println("Long pressed element: " + locator);
         } catch (Exception e) {
             System.out.println("Failed to long press element: " + locator);
             e.printStackTrace();
