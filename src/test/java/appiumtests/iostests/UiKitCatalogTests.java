@@ -11,7 +11,10 @@ public class UiKitCatalogTests extends BaseIosTests {
         AlertViewPage alertViewPage = new AlertViewPage();
         alertViewPage.clickAlertViewsBtn()
                 .clickTextEntryBox()
-                .sendTextEntryKeys();
+                .sendTextEntryKeys()
+                .clickOkBtn()
+                .clickConfirmBtn()
+                .getAlertText();
     }
 
 }
