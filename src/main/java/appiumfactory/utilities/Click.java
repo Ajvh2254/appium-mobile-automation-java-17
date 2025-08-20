@@ -10,6 +10,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Click extends BasePage {
 
     public Click() {
@@ -41,7 +44,7 @@ public class Click extends BasePage {
         }
     }
 
-    public void longClick(By locator, int milliseconds) {
+    public void androidLongClick(By locator, int milliseconds) {
         try {
             AndroidWaiter.waitForElementToBeClickable(locator);
             WebElement element = AndroidDriverManager.getAndroidDriver().findElement(locator);
@@ -63,6 +66,21 @@ public class Click extends BasePage {
             System.out.println("Clicked on element: " + locator);
         } catch (Exception e) {
             System.out.println("Failed to click on element: " + locator);
+            e.printStackTrace();
+        }
+    }
+
+    public static void iosLongClick(By locator, int milliseconds) {
+        try {
+            IosWaiter.waitForElementToBeClickable(locator);
+            WebElement element = IosDriverManager.getIosDriver().findElement(locator);
+            Map<String, Object> params = new HashMap<>();
+            params.put("element", ((RemoteWebElement)element).getId());
+            params.put("duration", milliseconds);
+            IosDriverManager.getIosDriver().executeScript("mobile: touchAndHold", params);
+            System.out.println("Long pressed element: " + locator);
+        } catch (Exception e) {
+            System.out.println("Failed to long press element: " + locator);
             e.printStackTrace();
         }
     }

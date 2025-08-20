@@ -38,7 +38,7 @@ public class CartPage extends BasePage {
     }
 
     public CartPage longClickTermsBtn() {
-        click.longClick(By.id("com.androidsample.generalstore:id/termsButton"), 5000);
+        click.androidLongClick(By.id("com.androidsample.generalstore:id/termsButton"), 5000);
         return this;
     }
 

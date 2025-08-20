@@ -1,6 +1,7 @@
 package appiumtests.iostests;
 
 import appiumfactory.appiumcourse.uikitcatalog.AlertViewPage;
+import appiumfactory.appiumcourse.uikitcatalog.SteppersPage;
 import basetests.BaseIosTests;
 import org.testng.annotations.Test;
 
@@ -15,6 +16,13 @@ public class UiKitCatalogTests extends BaseIosTests {
                 .clickOkBtn()
                 .clickConfirmBtn()
                 .getAlertText();
+    }
+
+    @Test
+    public void longClickTest() {
+        SteppersPage steppersPage = new SteppersPage();
+        steppersPage.clickSteppersBtn()
+                .clickAndHoldSteppersBtn();
     }
 
 }
