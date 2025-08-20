@@ -19,6 +19,7 @@ public class AppiumDriverManager {
                 .withIPAddress("127.0.0.1")
                 .usingPort(4723)
                 .build();
+        System.out.println("Appium started at: " + appiumService.getUrl());
 
         appiumService.start();
         appiumService.clearOutPutStreams();

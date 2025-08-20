@@ -2,6 +2,7 @@ package appiumfactory.appiumcourse.apidemos.pages;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
+import appiumfactory.utilities.androidutils.AndroidWaiter;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -56,7 +57,7 @@ public class AnimationPage extends BasePage {
     }
 
     public AnimationPage isCloningBtnClickable() {
-        androidWaiter.waitForElementToBeClickable(AppiumBy.accessibilityId("Cloning"));
+        AndroidWaiter.waitForElementToBeClickable(AppiumBy.accessibilityId("Cloning"));
         return this;
     }
 

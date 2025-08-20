@@ -2,6 +2,8 @@ package appiumfactory.utilities;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
+import appiumfactory.driver.IosDriverManager;
+import appiumfactory.utilities.androidutils.AndroidWaiter;
 import com.google.common.collect.ImmutableMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,7 +18,7 @@ public class Click extends BasePage {
 
     public void androidClick(By locator) {
         try {
-            androidWaiter.waitForElementToBeClickable(locator);
+            AndroidWaiter.waitForElementToBeClickable(locator);
             AndroidDriverManager.getAndroidDriver().findElement(locator).click();
             System.out.println("Clicked on element: " + locator);
         } catch (Exception e) {
@@ -41,7 +43,7 @@ public class Click extends BasePage {
 
     public void longClick(By locator, int milliseconds) {
         try {
-            androidWaiter.waitForElementToBeClickable(locator);
+            AndroidWaiter.waitForElementToBeClickable(locator);
             WebElement element = AndroidDriverManager.getAndroidDriver().findElement(locator);
             ((JavascriptExecutor) AndroidDriverManager.getAndroidDriver()).executeScript(
                     "mobile: longClickGesture", ImmutableMap.of(
@@ -50,6 +52,17 @@ public class Click extends BasePage {
             System.out.println("Long pressed element: " + locator);
         } catch (Exception e) {
             System.out.println("Failed to long press element: " + locator);
+            e.printStackTrace();
+        }
+    }
+
+    public static void iosClick(By locator) {
+        try {
+            IosWaiter.waitForElementToBeClickable(locator);
+            IosDriverManager.getIosDriver().findElement(locator).click();
+            System.out.println("Clicked on element: " + locator);
+        } catch (Exception e) {
+            System.out.println("Failed to click on element: " + locator);
             e.printStackTrace();
         }
     }
