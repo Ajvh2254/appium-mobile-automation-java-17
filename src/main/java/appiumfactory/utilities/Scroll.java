@@ -2,9 +2,16 @@ package appiumfactory.utilities;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
+import appiumfactory.driver.IosDriverManager;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Scroll extends BasePage {
 
@@ -12,7 +19,7 @@ public class Scroll extends BasePage {
         super();
     }
 
-    public void scroll() {
+    public void androidScroll() {
         boolean canScrollMore;
         do {
             canScrollMore = (Boolean) ((JavascriptExecutor) AndroidDriverManager.getAndroidDriver()).executeScript(
@@ -30,6 +37,14 @@ public class Scroll extends BasePage {
                 "new UiScrollable(new UiSelector()).scrollIntoView(text(\""+ text +"\"));"
         ));
         System.out.println("Scrolled " + text + " into view");
+    }
+
+    public static void iosScroll(By locator) {
+        WebElement element = IosDriverManager.getIosDriver().findElement(locator);
+        Map<String, Object> params = new HashMap<>();
+        params.put("element", ((RemoteWebElement)element).getId());
+        params.put("direction", "down");
+        IosDriverManager.getIosDriver().executeScript("mobile: scroll", params);
     }
 
 }
