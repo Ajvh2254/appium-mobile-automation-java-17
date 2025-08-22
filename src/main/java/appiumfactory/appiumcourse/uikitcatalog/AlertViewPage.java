@@ -2,6 +2,7 @@ package appiumfactory.appiumcourse.uikitcatalog;
 
 import appiumfactory.driver.IosDriverManager;
 import appiumfactory.utilities.Click;
+import appiumfactory.utilities.SendKeys;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -23,8 +24,7 @@ public class AlertViewPage {
     }
 
     public AlertViewPage sendTextEntryKeys() {
-        IosDriverManager.getIosDriver().findElement(
-                By.xpath("//XCUIElementTypeTextField")).sendKeys("Yo");
+        SendKeys.androidSendKeys(By.xpath("//XCUIElementTypeTextField"), "Yo");
         return this;
     }
 

@@ -2,6 +2,7 @@ package appiumfactory.appiumcourse.apidemos.pages;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
+import appiumfactory.utilities.SendKeys;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.Activity;
@@ -71,8 +72,7 @@ public class WifiPage extends BasePage {
     }
 
     public WifiPage sendWifiName() {
-        AndroidDriverManager.getAndroidDriver().findElement(
-                By.id("android:id/edit")).sendKeys("FoxHounds Wifi");
+        SendKeys.androidSendKeys(By.id("android:id/edit"), "FoxHounds Wifi");
         return this;
     }
 
