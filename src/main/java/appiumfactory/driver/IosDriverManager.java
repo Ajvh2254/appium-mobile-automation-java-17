@@ -1,6 +1,5 @@
 package appiumfactory.driver;
 
-import appiumfactory.base.BasePage;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 
@@ -32,15 +31,13 @@ public class IosDriverManager {
 
     private static void setIosDriver(final IOSDriver iosDriver) {
         IosDriverManager.IOS_DRIVER.set(iosDriver);
-        BasePage.initializeUtilities();
     }
 
     private static XCUITestOptions uiKitCapabilities() {
         return xcuiTestOptions = new XCUITestOptions()
-                .setDeviceName("iPhone 16 Pro")
+                .setDeviceName("iPhone 16 Plus")
                 .setPlatformVersion("18.6")
-                .setApp("apps/UIKitCatalog.app")
-                .setBundleId("com.example.apple-samplecode.UIKitCatalog")
+                .setApp("/Users/cuzi/IOS_Apps/UIKitCatalog.app")
                 .setAutomationName("XCuiTest")
                 .setWdaLaunchTimeout(Duration.ofSeconds(60));
     }

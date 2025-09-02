@@ -23,7 +23,7 @@ public class ExpandableListsPage extends BasePage {
     }
 
     public ExpandableListsPage longClickPeopleNamesBtn() {
-        click.longClick(By.xpath(
+        click.androidLongClick(By.xpath(
                 "//android.widget.TextView[@text='People Names']"), 2000);
         return this;
     }

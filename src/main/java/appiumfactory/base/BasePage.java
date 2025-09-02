@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
 
-    protected static AndroidWaiter androidWaiter;
     protected static Click click;
     protected static DragAndDrop dragAndDrop;
     protected static IsDisplayed isDisplayed;
@@ -21,7 +20,6 @@ public class BasePage {
     }
 
     public static void initializeUtilities() {
-        androidWaiter = new AndroidWaiter();
         click = new Click();
         dragAndDrop = new DragAndDrop();
         isDisplayed = new IsDisplayed();

@@ -2,6 +2,7 @@ package appiumfactory.appiumcourse.generalstore;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
+import appiumfactory.utilities.SendKeys;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -28,9 +29,9 @@ public class LandingPage extends BasePage {
     }
 
     public LandingPage sendNameKeys() {
-        AndroidDriverManager.getAndroidDriver().findElement(By.xpath(
-                "//android.widget.EditText[@resource-id='com.androidsample.generalstore:id/nameField']"))
-                .sendKeys("Ray Fitzgerald");
+        SendKeys.androidSendKeys(By.xpath(
+                "//android.widget.EditText[@resource-id='com.androidsample.generalstore:id/nameField']"),
+                "Ray Fitzgerald");
         return this;
     }
 

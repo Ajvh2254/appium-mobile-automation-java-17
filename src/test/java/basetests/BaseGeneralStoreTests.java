@@ -11,6 +11,11 @@ public class BaseGeneralStoreTests {
     public void initiateGeneralStore() {
         AppiumDriverManager.startAppium();
         AndroidDriverManager.createGeneralStoreDriver();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @AfterMethod

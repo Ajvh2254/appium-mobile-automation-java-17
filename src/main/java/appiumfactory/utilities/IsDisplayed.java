@@ -1,6 +1,7 @@
 package appiumfactory.utilities;
 
 import appiumfactory.base.BasePage;
+import appiumfactory.utilities.androidutils.AndroidWaiter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -12,7 +13,7 @@ public class IsDisplayed extends BasePage {
 
     public boolean isElementDisplayed(By locator) {
         try {
-            androidWaiter.waitForVisibilityOfElement(locator);
+            AndroidWaiter.waitForVisibilityOfElement(locator);
             System.out.println(locator + " is visible");
             return true;
         } catch (Exception e) {
@@ -23,7 +24,7 @@ public class IsDisplayed extends BasePage {
 
     public boolean isElementNotDisplayed(By locator) {
         try {
-            androidWaiter.waitForInvisibilityOfElement(locator);
+            AndroidWaiter.waitForInvisibilityOfElement(locator);
             System.out.println(locator + " is not visible");
             return true;
         } catch (NoSuchElementException e) {

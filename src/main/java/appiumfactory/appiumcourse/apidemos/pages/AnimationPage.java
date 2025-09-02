@@ -2,6 +2,7 @@ package appiumfactory.appiumcourse.apidemos.pages;
 
 import appiumfactory.base.BasePage;
 import appiumfactory.driver.AndroidDriverManager;
+import appiumfactory.utilities.androidutils.AndroidWaiter;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -29,16 +30,16 @@ public class AnimationPage extends BasePage {
         return this;
     }
 
-    public AnimationPage clickBouncingBallsBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Bouncing Balls"));
+    public AnimationPage selectPageBtn(String btn) {
+        click.androidClick(AppiumBy.accessibilityId(btn));
         return this;
     }
 
-    public AnimationPage isBouncingBallsLogoDisplayed() {
+    public AnimationPage isPageTitleDisplayed(String logo) {
         boolean bbTitle = isDisplayed.isElementDisplayed(
-                By.xpath("//android.widget.TextView[@text='Animation/Bouncing Balls']"));
+                By.xpath("//android.widget.TextView[@text='" + logo + "']"));
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(bbTitle, "Bouncing Balls logo is not displayed");
+        softAssert.assertTrue(bbTitle, "Page logo is not displayed");
         softAssert.assertAll();
         return this;
     }
@@ -56,14 +57,24 @@ public class AnimationPage extends BasePage {
     }
 
     public AnimationPage isCloningBtnClickable() {
-        androidWaiter.waitForElementToBeClickable(AppiumBy.accessibilityId("Cloning"));
+        AndroidWaiter.waitForElementToBeClickable(AppiumBy.accessibilityId("Cloning"));
         return this;
     }
 
-    public AnimationPage clickCloningBtn() {
-            AndroidDriverManager.getAndroidDriver().findElement(
-                    AppiumBy.accessibilityId("Cloning")).click();
-            return this;
+    public AnimationPage isPlayBtnSelectable() {
+        boolean evaluatorTitle = AndroidDriverManager.getAndroidDriver().findElement(
+                By.xpath("//android.widget.TextView[@text='Animation/Custom Evaluator']")).isSelected();
+        Assert.assertFalse(evaluatorTitle);
+        return this;
+    }
+
+    public AnimationPage isAddBtnClickable() {
+        boolean addBtn = AndroidDriverManager.getAndroidDriver().findElement(
+                AppiumBy.accessibilityId("Add Button")).isEnabled();
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(addBtn);
+        softAssert.assertAll();
+        return this;
     }
 
 }
