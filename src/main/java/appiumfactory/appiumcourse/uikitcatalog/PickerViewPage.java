@@ -1,15 +1,15 @@
 package appiumfactory.appiumcourse.uikitcatalog;
 
-import appiumfactory.driver.IosDriverManager;
-import appiumfactory.utilities.Click;
+import appiumfactory.base.BaseIosPage;
 import appiumfactory.utilities.SendKeys;
+import appiumfactory.utilities.iosutils.IosClick;
 import io.appium.java_client.AppiumBy;
 import org.testng.Assert;
 
-public class PickerViewPage {
+public class PickerViewPage extends BaseIosPage {
 
     public static void clickPickerViewBtn() {
-        Click.iosClick(AppiumBy.accessibilityId("Picker View"));
+        IosClick.iosClick(AppiumBy.accessibilityId("Picker View"));
     }
 
     public static void iosScrollRedColorValue() {
@@ -17,7 +17,7 @@ public class PickerViewPage {
     }
 
     public static void assertScrollRedValue() {
-        String number = IosDriverManager.getIosDriver().findElement(
+        String number = iosDriver.findElement(
                 AppiumBy.accessibilityId("Red color component value")).getText();
         Assert.assertEquals(number, "80");
     }
@@ -27,7 +27,7 @@ public class PickerViewPage {
     }
 
     public static void assertGreenColorValue() {
-        String number = IosDriverManager.getIosDriver().findElement(
+        String number = iosDriver.findElement(
                 AppiumBy.accessibilityId("Green color component value")).getText();
         Assert.assertEquals(number, "220");
     }
@@ -37,7 +37,7 @@ public class PickerViewPage {
     }
 
     public static void assertBlueColorValue() {
-        String number = IosDriverManager.getIosDriver().findElement(
+        String number = iosDriver.findElement(
                 AppiumBy.accessibilityId("Blue color component value")).getText();
         Assert.assertEquals(number, "105");
     }

@@ -1,6 +1,6 @@
 package appiumfactory.driver;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
@@ -43,7 +43,7 @@ public class AndroidDriverManager {
 
     private static void setAndroidDriver(AndroidDriver driver) {
         AndroidDriverManager.DRIVER.set(driver);
-        BasePage.initializeUtilities();
+        BaseAndroidPage.initializeUtilities();
     }
 
     private static void setDriverTimeout() {

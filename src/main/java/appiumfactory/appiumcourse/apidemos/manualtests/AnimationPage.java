@@ -1,6 +1,6 @@
-package appiumfactory.appiumcourse.apidemos.pages;
+package appiumfactory.appiumcourse.apidemos.manualtests;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.utilities.androidutils.AndroidWaiter;
 import io.appium.java_client.AppiumBy;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-public class AnimationPage extends BasePage {
+public class AnimationPage extends BaseAndroidPage {
 
     public AnimationPage isAPIDemosHeaderDisplayed() {
         String apiDemos = AndroidDriverManager.getAndroidDriver().findElement(

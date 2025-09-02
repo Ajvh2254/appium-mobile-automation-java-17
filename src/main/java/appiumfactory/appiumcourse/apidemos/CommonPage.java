@@ -1,9 +1,9 @@
 package appiumfactory.appiumcourse.apidemos;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import io.appium.java_client.AppiumBy;
 
-public class CommonPage extends BasePage {
+public class CommonPage extends BaseAndroidPage {
 
     public CommonPage() {
         super();

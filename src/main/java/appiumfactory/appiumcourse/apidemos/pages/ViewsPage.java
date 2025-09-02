@@ -1,8 +1,8 @@
 package appiumfactory.appiumcourse.apidemos.pages;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 
-public class ViewsPage extends BasePage {
+public class ViewsPage extends BaseAndroidPage {
 
     public ViewsPage() {
         super();

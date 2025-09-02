@@ -1,11 +1,11 @@
 package appiumfactory.utilities;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.utilities.androidutils.AndroidWaiter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
-public class IsDisplayed extends BasePage {
+public class IsDisplayed extends BaseAndroidPage {
 
     public IsDisplayed() {
         super();

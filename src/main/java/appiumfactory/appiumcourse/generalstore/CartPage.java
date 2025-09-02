@@ -1,6 +1,6 @@
 package appiumfactory.appiumcourse.generalstore;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class CartPage extends BasePage {
+public class CartPage extends BaseAndroidPage {
 
     public CartPage() {
         super();

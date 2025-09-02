@@ -1,13 +1,13 @@
 package appiumfactory.appiumcourse.apidemos.pages;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class PhotosPage extends BasePage {
+public class PhotosPage extends BaseAndroidPage {
 
     By image = By.xpath("//android.widget.ImageView[1]");
 

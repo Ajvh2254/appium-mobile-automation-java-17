@@ -1,12 +1,12 @@
 package appiumfactory.appiumcourse.generalstore;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.utilities.SendKeys;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class LandingPage extends BasePage {
+public class LandingPage extends BaseAndroidPage {
 
     public LandingPage() {
         super();

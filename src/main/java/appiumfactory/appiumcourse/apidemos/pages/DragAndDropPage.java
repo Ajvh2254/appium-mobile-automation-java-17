@@ -1,12 +1,12 @@
 package appiumfactory.appiumcourse.apidemos.pages;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class DragAndDropPage extends BasePage {
+public class DragAndDropPage extends BaseAndroidPage {
 
     public DragAndDropPage() {
         super();

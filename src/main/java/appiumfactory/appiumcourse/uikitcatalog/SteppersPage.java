@@ -1,6 +1,6 @@
 package appiumfactory.appiumcourse.uikitcatalog;
 
-import appiumfactory.utilities.Click;
+import appiumfactory.utilities.iosutils.IosClick;
 import io.appium.java_client.AppiumBy;
 
 public class SteppersPage {
@@ -10,12 +10,12 @@ public class SteppersPage {
     }
 
     public SteppersPage clickSteppersBtn() {
-        Click.iosClick(AppiumBy.iOSNsPredicateString("name == 'Steppers'"));
+        IosClick.iosClick(AppiumBy.iOSNsPredicateString("name == 'Steppers'"));
         return this;
     }
 
     public void clickAndHoldSteppersBtn() {
-        Click.iosLongClick(AppiumBy.iOSClassChain(
+        IosClick.iosLongClick(AppiumBy.iOSClassChain(
                 "**/XCUIElementTypeButton[`name == 'Increment'`][3]"), 5000);
     }
 

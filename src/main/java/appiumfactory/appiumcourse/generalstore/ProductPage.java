@@ -1,13 +1,13 @@
 package appiumfactory.appiumcourse.generalstore;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class ProductPage extends BasePage {
+public class ProductPage extends BaseAndroidPage {
 
     public ProductPage() {
         super();

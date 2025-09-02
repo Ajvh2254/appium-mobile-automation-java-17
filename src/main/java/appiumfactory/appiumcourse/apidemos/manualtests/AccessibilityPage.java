@@ -1,6 +1,6 @@
-package appiumfactory.appiumcourse.apidemos.pages;
+package appiumfactory.appiumcourse.apidemos.manualtests;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class AccessibilityPage extends BasePage {
+public class AccessibilityPage extends BaseAndroidPage {
 
     public AccessibilityPage() {
         super();

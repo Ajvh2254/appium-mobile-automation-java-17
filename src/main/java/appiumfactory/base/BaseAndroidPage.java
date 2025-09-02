@@ -6,7 +6,7 @@ import appiumfactory.utilities.androidutils.PressKey;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
-public class BasePage {
+public class BaseAndroidPage {
 
     protected static Click click;
     protected static DragAndDrop dragAndDrop;
@@ -15,7 +15,7 @@ public class BasePage {
     protected static Scroll scroll;
     protected static Swipe swipe;
 
-    public BasePage() {
+    public BaseAndroidPage() {
         PageFactory.initElements(new AppiumFieldDecorator(AndroidDriverManager.getAndroidDriver()), this);
     }
 

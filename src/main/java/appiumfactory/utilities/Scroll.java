@@ -1,6 +1,6 @@
 package appiumfactory.utilities;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.driver.IosDriverManager;
 import com.google.common.collect.ImmutableMap;
@@ -13,7 +13,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Scroll extends BasePage {
+public class Scroll extends BaseAndroidPage {
 
     public Scroll() {
         super();

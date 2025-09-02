@@ -1,9 +1,7 @@
 package appiumfactory.utilities;
 
-import appiumfactory.driver.IosDriverManager;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -11,12 +9,9 @@ import java.time.Duration;
 
 public class IosWaiter {
 
-    private static final WebDriverWait wait = new WebDriverWait(
-            IosDriverManager.getIosDriver(), Duration.ofSeconds(5));
+    private static IOSDriver iosDriver;
 
-    public IosWaiter() {
-        PageFactory.initElements(new AppiumFieldDecorator(IosDriverManager.getIosDriver()), this);
-    }
+    private static final WebDriverWait wait = new WebDriverWait(iosDriver, Duration.ofSeconds(5));
 
     public static void waitForVisibilityOfElement(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

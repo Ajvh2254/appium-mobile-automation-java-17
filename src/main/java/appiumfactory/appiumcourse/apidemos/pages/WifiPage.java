@@ -1,6 +1,6 @@
 package appiumfactory.appiumcourse.apidemos.pages;
 
-import appiumfactory.base.BasePage;
+import appiumfactory.base.BaseAndroidPage;
 import appiumfactory.driver.AndroidDriverManager;
 import appiumfactory.utilities.SendKeys;
 import com.google.common.collect.ImmutableMap;
@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.DeviceRotation;
 import org.testng.Assert;
 
-public class WifiPage extends BasePage {
+public class WifiPage extends BaseAndroidPage {
 
     public WifiPage() {
         super();

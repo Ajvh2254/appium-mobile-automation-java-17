@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class IosDriverManager {
 
-    private static final ThreadLocal<IOSDriver> IOS_DRIVER = new ThreadLocal<>();
+    private static IOSDriver iosdriver;
     private static XCUITestOptions xcuiTestOptions;
 
     public static void createIosDriver() {
@@ -22,15 +22,18 @@ public class IosDriverManager {
     }
 
     public static void quitIosDriver() {
-        getIosDriver().quit();
+        iosdriver.quit();
     }
 
     public static IOSDriver getIosDriver() {
-        return IosDriverManager.IOS_DRIVER.get();
+        if (iosdriver == null) {
+            throw new RuntimeException("Driver is null");
+        }
+        return iosdriver;
     }
 
     private static void setIosDriver(final IOSDriver iosDriver) {
-        IosDriverManager.IOS_DRIVER.set(iosDriver);
+        IosDriverManager.iosdriver = iosDriver;
     }
 
     private static XCUITestOptions uiKitCapabilities() {
