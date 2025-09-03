@@ -3,22 +3,22 @@ package cuzi.appiumAutomation.appiumcourse.uikitcatalog;
 import cuzi.appiumAutomation.base.BaseIosPage;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
 
 public class SteppersPage extends BaseIosPage {
 
     /***
      * Comes from Page Factory model provided by Appium and is instantiated within BasePage class
      */
-    @iOSXCUITFindBy(accessibility = "Steppers")
-    private WebElement steppersBtn;
+    @iOSXCUITFindBy(iOSNsPredicate = "name == 'Steppers'")
+    private By steppersBtn;
 
     public SteppersPage() {
         super();
     }
 
     public SteppersPage clickSteppersBtn() {
-        iosClick.iosClick(AppiumBy.iOSNsPredicateString("name == 'Steppers'"));
+        iosClick.iosClick(steppersBtn);
         return this;
     }
 
