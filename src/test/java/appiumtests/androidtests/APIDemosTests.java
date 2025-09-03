@@ -1,8 +1,8 @@
 package appiumtests.androidtests;
 
-import appiumfactory.appiumcourse.apidemos.CommonPage;
-import appiumfactory.appiumcourse.apidemos.pages.*;
+import cuzi.appiumAutomation.appiumcourse.apidemos.CommonPage;
 import basetests.BaseAPIDemosTests;
+import cuzi.appiumAutomation.appiumcourse.apidemos.pages.*;
 import org.testng.annotations.Test;
 
 public class APIDemosTests extends BaseAPIDemosTests {

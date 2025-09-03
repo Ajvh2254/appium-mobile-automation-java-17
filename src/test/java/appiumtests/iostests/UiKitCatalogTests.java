@@ -1,18 +1,22 @@
 package appiumtests.iostests;
 
-import appiumfactory.appiumcourse.uikitcatalog.AlertViewPage;
-import appiumfactory.appiumcourse.uikitcatalog.PickerViewPage;
-import appiumfactory.appiumcourse.uikitcatalog.SteppersPage;
+import cuzi.appiumAutomation.appiumcourse.uikitcatalog.AlertViewPage;
+import cuzi.appiumAutomation.appiumcourse.uikitcatalog.PickerViewPage;
+import cuzi.appiumAutomation.appiumcourse.uikitcatalog.SteppersPage;
 import basetests.BaseIosTests;
+import cuzi.appiumAutomation.appiumcourse.uikitcatalog.ios.HomePage;
 import org.testng.annotations.Test;
 
 public class UiKitCatalogTests extends BaseIosTests {
 
     @Test
     public void AlertViewPageTest() {
+        HomePage homePage = new HomePage();
+        homePage.isUiKitCatalogPageDisplayed();
+        homePage.clickAlertViewsBtn();
+
         AlertViewPage alertViewPage = new AlertViewPage();
-        alertViewPage.clickAlertViewsBtn()
-                .clickTextEntryBox()
+        alertViewPage.clickTextEntryBox()
                 .sendTextEntryKeys()
                 .clickOkBtn()
                 .clickConfirmBtn()
@@ -28,13 +32,14 @@ public class UiKitCatalogTests extends BaseIosTests {
 
     @Test
     public void iosScrollTest() {
-        PickerViewPage.clickPickerViewBtn();
-        PickerViewPage.iosScrollRedColorValue();
-        PickerViewPage.assertScrollRedValue();
-        PickerViewPage.iosScrollGreenColorValue();
-        PickerViewPage.assertGreenColorValue();
-        PickerViewPage.iosScrollBlueColorValue();
-        PickerViewPage.assertBlueColorValue();
+        PickerViewPage pickerViewPage = new PickerViewPage();
+        pickerViewPage.clickPickerViewBtn();
+        pickerViewPage.iosScrollRedColorValue();
+        pickerViewPage.assertScrollRedValue();
+        pickerViewPage.iosScrollGreenColorValue();
+        pickerViewPage.assertGreenColorValue();
+        pickerViewPage.iosScrollBlueColorValue();
+        pickerViewPage.assertBlueColorValue();
     }
 
 }

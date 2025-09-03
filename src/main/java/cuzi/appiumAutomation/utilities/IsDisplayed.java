@@ -1,0 +1,39 @@
+package cuzi.appiumAutomation.utilities;
+
+import cuzi.appiumAutomation.base.BaseAndroidPage;
+import cuzi.appiumAutomation.utilities.waiterutils.AndroidWaiter;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+
+public class IsDisplayed extends BaseAndroidPage {
+
+    public IsDisplayed() {
+        super();
+    }
+
+    public boolean isElementDisplayed(By locator) {
+        try {
+            AndroidWaiter.waitForVisibilityOfElement(locator);
+            System.out.println(locator + " is visible");
+            return true;
+        } catch (Exception e) {
+            System.out.println(locator + " is not visible");
+            return false;
+        }
+    }
+
+    public boolean isElementNotDisplayed(By locator) {
+        try {
+            AndroidWaiter.waitForInvisibilityOfElement(locator);
+            System.out.println(locator + " is not visible");
+            return true;
+        } catch (NoSuchElementException e) {
+            System.out.println(locator + " not found, treating as not visible");
+            return true;
+        } catch (Exception e) {
+            System.out.println(locator + " is visible");
+            return false;
+        }
+    }
+
+}
