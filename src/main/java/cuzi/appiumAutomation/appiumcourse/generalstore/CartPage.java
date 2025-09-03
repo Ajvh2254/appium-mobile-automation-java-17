@@ -38,22 +38,22 @@ public class CartPage extends BaseAndroidPage {
     }
 
     public CartPage longClickTermsBtn() {
-        click.androidLongClick(By.id("com.androidsample.generalstore:id/termsButton"), 5000);
+        click.longClick(By.id("com.androidsample.generalstore:id/termsButton"), 5000);
         return this;
     }
 
     public CartPage clickCloseBtn() {
-        click.androidClick(By.id("android:id/button1"));
+        click.click(By.id("android:id/button1"));
         return this;
     }
 
     public CartPage clickEmailsCheckbox() {
-        click.androidClick(AppiumBy.className("android.widget.CheckBox"));
+        click.click(AppiumBy.className("android.widget.CheckBox"));
         return this;
     }
 
     public void clickCompletePurchaseBtn() {
-        click.androidClick(By.id("com.androidsample.generalstore:id/btnProceed"));
+        click.click(By.id("com.androidsample.generalstore:id/btnProceed"));
     }
 
 }

@@ -26,7 +26,7 @@ public class WifiPage extends BaseAndroidPage {
     }
 
     public WifiPage clickPreferenceBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Preference"));
+        click.click(AppiumBy.accessibilityId("Preference"));
         return this;
     }
 
@@ -37,7 +37,7 @@ public class WifiPage extends BaseAndroidPage {
     }
 
     public WifiPage clickCheckboxBtn() {
-        click.androidClick(By.id("android:id/checkbox"));
+        click.click(By.id("android:id/checkbox"));
         return this;
     }
 
@@ -72,7 +72,7 @@ public class WifiPage extends BaseAndroidPage {
     }
 
     public WifiPage sendWifiName() {
-        SendKeys.androidSendKeys(By.id("android:id/edit"), "FoxHounds Wifi");
+        SendKeys.sendKeys(By.id("android:id/edit"), "FoxHounds Wifi");
         return this;
     }
 

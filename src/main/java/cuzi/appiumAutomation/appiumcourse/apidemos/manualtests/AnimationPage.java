@@ -19,7 +19,7 @@ public class AnimationPage extends BaseAndroidPage {
     }
 
     public AnimationPage clickAnimationBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Animation"));
+        click.click(AppiumBy.accessibilityId("Animation"));
         return this;
     }
 
@@ -31,7 +31,7 @@ public class AnimationPage extends BaseAndroidPage {
     }
 
     public AnimationPage selectPageBtn(String btn) {
-        click.androidClick(AppiumBy.accessibilityId(btn));
+        click.click(AppiumBy.accessibilityId(btn));
         return this;
     }
 

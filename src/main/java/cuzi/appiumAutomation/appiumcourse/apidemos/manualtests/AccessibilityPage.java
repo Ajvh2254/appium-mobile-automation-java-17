@@ -29,7 +29,7 @@ public class AccessibilityPage extends BaseAndroidPage {
     }
 
     public AccessibilityPage clickAccessibilityPageBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Access'ibility"));
+        click.click(AppiumBy.accessibilityId("Access'ibility"));
         return this;
     }
 
@@ -39,7 +39,7 @@ public class AccessibilityPage extends BaseAndroidPage {
     }
 
     public AccessibilityPage clickNodeProviderBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Accessibility Node Provider"));
+        click.click(AppiumBy.accessibilityId("Accessibility Node Provider"));
         return this;
     }
 
@@ -49,7 +49,7 @@ public class AccessibilityPage extends BaseAndroidPage {
     }
 
     public AccessibilityPage clickNodeQueryingBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Accessibility Node Querying"));
+        click.click(AppiumBy.accessibilityId("Accessibility Node Querying"));
         return this;
     }
 
@@ -59,7 +59,7 @@ public class AccessibilityPage extends BaseAndroidPage {
     }
 
     public AccessibilityPage clickServiceBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Accessibility Service"));
+        click.click(AppiumBy.accessibilityId("Accessibility Service"));
         return this;
     }
 
@@ -69,7 +69,7 @@ public class AccessibilityPage extends BaseAndroidPage {
     }
 
     public AccessibilityPage clickCustomViewBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Custom View"));
+        click.click(AppiumBy.accessibilityId("Custom View"));
         return this;
     }
 

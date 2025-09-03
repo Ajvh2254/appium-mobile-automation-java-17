@@ -45,7 +45,7 @@ public class ProductPage extends BaseAndroidPage {
     }
 
     public void clickCartBtn() {
-        click.androidClick(By.xpath(
+        click.click(By.xpath(
                 "//android.widget.ImageButton[@resource-id='com.androidsample.generalstore:id/appbar_btn_cart']"));
     }
 

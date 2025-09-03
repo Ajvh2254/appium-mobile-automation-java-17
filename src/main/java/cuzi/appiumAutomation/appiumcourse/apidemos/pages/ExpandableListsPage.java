@@ -13,17 +13,17 @@ public class ExpandableListsPage extends BaseAndroidPage {
     }
 
     public ExpandableListsPage clickExpandableListsBtn() {
-        click.androidClick(By.xpath("//android.widget.TextView[@content-desc='Expandable Lists']"));
+        click.click(By.xpath("//android.widget.TextView[@content-desc='Expandable Lists']"));
         return this;
     }
 
     public ExpandableListsPage clickCustomAdapterBtn() {
-        click.androidClick(AppiumBy.accessibilityId("1. Custom Adapter"));
+        click.click(AppiumBy.accessibilityId("1. Custom Adapter"));
         return this;
     }
 
     public ExpandableListsPage longClickPeopleNamesBtn() {
-        click.androidLongClick(By.xpath(
+        click.longClick(By.xpath(
                 "//android.widget.TextView[@text='People Names']"), 2000);
         return this;
     }

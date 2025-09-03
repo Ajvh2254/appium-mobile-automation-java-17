@@ -2,7 +2,6 @@ package cuzi.appiumAutomation.appiumcourse.uikitcatalog;
 
 import cuzi.appiumAutomation.base.BaseIosPage;
 import cuzi.appiumAutomation.utilities.SendKeys;
-import cuzi.appiumAutomation.utilities.iosutils.IosClick;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.ios.IOSDriver;
 import org.testng.Assert;
@@ -12,11 +11,11 @@ public class PickerViewPage extends BaseIosPage {
     private final IOSDriver iosDriver = null;
 
     public void clickPickerViewBtn() {
-        iosClick.iosClick(AppiumBy.accessibilityId("Picker View"));
+        iosClick.click(AppiumBy.accessibilityId("Picker View"));
     }
 
     public void iosScrollRedColorValue() {
-        SendKeys.iosSendKeys(AppiumBy.accessibilityId("Red color component value"), "80");
+        SendKeys.sendKeys(AppiumBy.accessibilityId("Red color component value"), "80");
     }
 
     public void assertScrollRedValue() {
@@ -26,7 +25,7 @@ public class PickerViewPage extends BaseIosPage {
     }
 
     public void iosScrollGreenColorValue() {
-        SendKeys.iosSendKeys(AppiumBy.accessibilityId("Green color component value"), "220");
+        SendKeys.sendKeys(AppiumBy.accessibilityId("Green color component value"), "220");
     }
 
     public void assertGreenColorValue() {
@@ -36,7 +35,7 @@ public class PickerViewPage extends BaseIosPage {
     }
 
     public void iosScrollBlueColorValue() {
-        SendKeys.iosSendKeys(AppiumBy.iOSNsPredicateString("label == 'Blue color component value'"), "105");
+        SendKeys.sendKeys(AppiumBy.iOSNsPredicateString("label == 'Blue color component value'"), "105");
     }
 
     public void assertBlueColorValue() {

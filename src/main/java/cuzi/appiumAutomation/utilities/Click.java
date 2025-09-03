@@ -15,7 +15,7 @@ public class Click extends BaseAndroidPage {
         super();
     }
 
-    public void androidClick(By locator) {
+    public void click(By locator) {
         try {
             AndroidWaiter.waitForElementToBeClickable(locator);
             AndroidDriverManager.getAndroidDriver().findElement(locator).click();
@@ -40,7 +40,7 @@ public class Click extends BaseAndroidPage {
         }
     }
 
-    public void androidLongClick(By locator, int milliseconds) {
+    public void longClick(By locator, int milliseconds) {
         try {
             AndroidWaiter.waitForElementToBeClickable(locator);
             WebElement element = AndroidDriverManager.getAndroidDriver().findElement(locator);

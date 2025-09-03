@@ -13,7 +13,7 @@ public class LandingPage extends BaseAndroidPage {
     }
 
     public LandingPage clickCountryDropdown() {
-        click.androidClick(By.id("android:id/text1"));
+        click.click(By.id("android:id/text1"));
         return this;
     }
 
@@ -23,13 +23,13 @@ public class LandingPage extends BaseAndroidPage {
     }
 
     public LandingPage clickCountryBtn() {
-        click.androidClick(By.xpath(
+        click.click(By.xpath(
                 "//android.widget.TextView[@text= 'Bermuda']"));
         return this;
     }
 
     public LandingPage sendNameKeys() {
-        SendKeys.androidSendKeys(By.xpath(
+        SendKeys.sendKeys(By.xpath(
                 "//android.widget.EditText[@resource-id='com.androidsample.generalstore:id/nameField']"),
                 "Ray Fitzgerald");
         return this;
@@ -41,12 +41,12 @@ public class LandingPage extends BaseAndroidPage {
     }
 
     public LandingPage clickFemaleBtn() {
-        click.androidClick(By.xpath("//android.widget.RadioButton[@text= 'Female']"));
+        click.click(By.xpath("//android.widget.RadioButton[@text= 'Female']"));
         return this;
     }
 
     public LandingPage clickLetsShopBtn() {
-        click.androidClick(By.id("com.androidsample.generalstore:id/btnLetsShop"));
+        click.click(By.id("com.androidsample.generalstore:id/btnLetsShop"));
         return this;
     }
 
