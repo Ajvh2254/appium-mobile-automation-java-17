@@ -1,7 +1,7 @@
 package basetests;
 
-import appiumfactory.driver.AppiumDriverManager;
-import appiumfactory.driver.IosDriverManager;
+import cuzi.appiumAutomation.driver.AppiumDriverManager;
+import cuzi.appiumAutomation.driver.IosDriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 

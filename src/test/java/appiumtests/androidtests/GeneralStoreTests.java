@@ -1,8 +1,8 @@
 package appiumtests.androidtests;
 
-import appiumfactory.appiumcourse.generalstore.CartPage;
-import appiumfactory.appiumcourse.generalstore.LandingPage;
-import appiumfactory.appiumcourse.generalstore.ProductPage;
+import cuzi.appiumAutomation.appiumcourse.generalstore.CartPage;
+import cuzi.appiumAutomation.appiumcourse.generalstore.LandingPage;
+import cuzi.appiumAutomation.appiumcourse.generalstore.ProductPage;
 import basetests.BaseGeneralStoreTests;
 import org.testng.annotations.Test;
 
