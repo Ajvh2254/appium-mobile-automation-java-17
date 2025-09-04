@@ -15,7 +15,7 @@ public class AccessibilityPage extends BaseAndroidPage {
     }
 
     public AccessibilityPage isAPIDemosHeaderDisplayed() {
-        isDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='API Demos']"));
+        androidIsDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='API Demos']"));
         return this;
     }
 
@@ -23,13 +23,13 @@ public class AccessibilityPage extends BaseAndroidPage {
         List<WebElement> apiDemosIcons = AndroidDriverManager.getAndroidDriver()
                 .findElements(By.id("android:id/text1"));
         for (int i = 0; i < apiDemosIcons.size(); i++) {
-            isDisplayed.isElementDisplayed(By.id("android:id/text1"));
+            androidIsDisplayed.isElementDisplayed(By.id("android:id/text1"));
         }
         return this;
     }
 
     public AccessibilityPage clickAccessibilityPageBtn() {
-        click.click(AppiumBy.accessibilityId("Access'ibility"));
+        androidClick.click(AppiumBy.accessibilityId("Access'ibility"));
         return this;
     }
 
@@ -39,42 +39,42 @@ public class AccessibilityPage extends BaseAndroidPage {
     }
 
     public AccessibilityPage clickNodeProviderBtn() {
-        click.click(AppiumBy.accessibilityId("Accessibility Node Provider"));
+        androidClick.click(AppiumBy.accessibilityId("Accessibility Node Provider"));
         return this;
     }
 
     public AccessibilityPage isNodeProviderHeaderDisplayed() {
-        isDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Accessibility/Accessibility Node Provider']"));
+        androidIsDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Accessibility/Accessibility Node Provider']"));
         return this;
     }
 
     public AccessibilityPage clickNodeQueryingBtn() {
-        click.click(AppiumBy.accessibilityId("Accessibility Node Querying"));
+        androidClick.click(AppiumBy.accessibilityId("Accessibility Node Querying"));
         return this;
     }
 
     public AccessibilityPage isNodeQueryHeaderDisplayed() {
-        isDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Accessibility/Accessibility Node Querying']"));
+        androidIsDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Accessibility/Accessibility Node Querying']"));
         return this;
     }
 
     public AccessibilityPage clickServiceBtn() {
-        click.click(AppiumBy.accessibilityId("Accessibility Service"));
+        androidClick.click(AppiumBy.accessibilityId("Accessibility Service"));
         return this;
     }
 
     public AccessibilityPage isServiceHeaderDisplayed() {
-        isDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Accessibility/Accessibility Service']"));
+        androidIsDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Accessibility/Accessibility Service']"));
         return this;
     }
 
     public AccessibilityPage clickCustomViewBtn() {
-        click.click(AppiumBy.accessibilityId("Custom View"));
+        androidClick.click(AppiumBy.accessibilityId("Custom View"));
         return this;
     }
 
     public void isCustomViewHeaderDisplayed() {
-        isDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Accessibility/Custom View']"));
+        androidIsDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Accessibility/Custom View']"));
     }
 
 }

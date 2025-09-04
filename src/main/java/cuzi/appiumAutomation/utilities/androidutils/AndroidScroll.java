@@ -1,4 +1,4 @@
-package cuzi.appiumAutomation.utilities;
+package cuzi.appiumAutomation.utilities.androidutils;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
@@ -6,9 +6,9 @@ import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.JavascriptExecutor;
 
-public class Scroll extends BaseAndroidPage {
+public class AndroidScroll extends BaseAndroidPage {
 
-    public Scroll() {
+    public AndroidScroll() {
         super();
     }
 

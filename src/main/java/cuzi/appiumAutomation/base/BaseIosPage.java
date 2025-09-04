@@ -1,9 +1,7 @@
 package cuzi.appiumAutomation.base;
 
 import cuzi.appiumAutomation.driver.IosDriverManager;
-import cuzi.appiumAutomation.utilities.iosutils.IosClick;
-import cuzi.appiumAutomation.utilities.iosutils.IosIsDisplayed;
-import cuzi.appiumAutomation.utilities.iosutils.IosSendKeys;
+import cuzi.appiumAutomation.utilities.iosutils.*;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;

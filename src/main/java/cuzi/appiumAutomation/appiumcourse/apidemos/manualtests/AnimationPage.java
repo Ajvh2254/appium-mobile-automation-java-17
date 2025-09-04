@@ -19,24 +19,24 @@ public class AnimationPage extends BaseAndroidPage {
     }
 
     public AnimationPage clickAnimationBtn() {
-        click.click(AppiumBy.accessibilityId("Animation"));
+        androidClick.click(AppiumBy.accessibilityId("Animation"));
         return this;
     }
 
     public AnimationPage isAPIDemosTitleDisplayed() {
-        boolean apiDemos = isDisplayed.isElementDisplayed(
+        boolean apiDemos = androidIsDisplayed.isElementDisplayed(
                 By.xpath("//android.widget.TextView[@text='API Demos']"));
         Assert.assertTrue(apiDemos);
         return this;
     }
 
     public AnimationPage selectPageBtn(String btn) {
-        click.click(AppiumBy.accessibilityId(btn));
+        androidClick.click(AppiumBy.accessibilityId(btn));
         return this;
     }
 
     public AnimationPage isPageTitleDisplayed(String logo) {
-        boolean bbTitle = isDisplayed.isElementDisplayed(
+        boolean bbTitle = androidIsDisplayed.isElementDisplayed(
                 By.xpath("//android.widget.TextView[@text='" + logo + "']"));
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(bbTitle, "Page logo is not displayed");

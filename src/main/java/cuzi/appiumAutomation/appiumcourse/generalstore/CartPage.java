@@ -16,7 +16,7 @@ public class CartPage extends BaseAndroidPage {
     }
 
     public CartPage isCartPageDisplayed() {
-        isDisplayed.isElementDisplayed(By.id("com.androidsample.generalstore:id/toolbar_title"));
+        androidIsDisplayed.isElementDisplayed(By.id("com.androidsample.generalstore:id/toolbar_title"));
         return this;
     }
 
@@ -38,22 +38,22 @@ public class CartPage extends BaseAndroidPage {
     }
 
     public CartPage longClickTermsBtn() {
-        click.longClick(By.id("com.androidsample.generalstore:id/termsButton"), 5000);
+        androidClick.longClick(By.id("com.androidsample.generalstore:id/termsButton"), 5000);
         return this;
     }
 
     public CartPage clickCloseBtn() {
-        click.click(By.id("android:id/button1"));
+        androidClick.click(By.id("android:id/button1"));
         return this;
     }
 
     public CartPage clickEmailsCheckbox() {
-        click.click(AppiumBy.className("android.widget.CheckBox"));
+        androidClick.click(AppiumBy.className("android.widget.CheckBox"));
         return this;
     }
 
     public void clickCompletePurchaseBtn() {
-        click.click(By.id("com.androidsample.generalstore:id/btnProceed"));
+        androidClick.click(By.id("com.androidsample.generalstore:id/btnProceed"));
     }
 
 }

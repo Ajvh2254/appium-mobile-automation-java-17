@@ -13,17 +13,17 @@ public class ExpandableListsPage extends BaseAndroidPage {
     }
 
     public ExpandableListsPage clickExpandableListsBtn() {
-        click.click(By.xpath("//android.widget.TextView[@content-desc='Expandable Lists']"));
+        androidClick.click(By.xpath("//android.widget.TextView[@content-desc='Expandable Lists']"));
         return this;
     }
 
     public ExpandableListsPage clickCustomAdapterBtn() {
-        click.click(AppiumBy.accessibilityId("1. Custom Adapter"));
+        androidClick.click(AppiumBy.accessibilityId("1. Custom Adapter"));
         return this;
     }
 
     public ExpandableListsPage longClickPeopleNamesBtn() {
-        click.longClick(By.xpath(
+        androidClick.longClick(By.xpath(
                 "//android.widget.TextView[@text='People Names']"), 2000);
         return this;
     }
@@ -32,7 +32,7 @@ public class ExpandableListsPage extends BaseAndroidPage {
         String text = AndroidDriverManager.getAndroidDriver().findElement(
                 By.id("android:id/title")).getText();
         Assert.assertEquals(text, "Sample menu");
-        Assert.assertTrue(isDisplayed.isElementDisplayed(By.id("android:id/title")));
+        Assert.assertTrue(androidIsDisplayed.isElementDisplayed(By.id("android:id/title")));
     }
 
 }

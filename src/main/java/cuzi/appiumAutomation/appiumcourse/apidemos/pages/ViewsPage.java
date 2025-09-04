@@ -9,11 +9,11 @@ public class ViewsPage extends BaseAndroidPage {
     }
 
     public void scrollDownViewsPage() {
-        scroll.scroll();
+        androidScroll.scroll();
     }
 
     public void scrollWebViewIntoView() {
-        scroll.scrollIntoView("WebView");
+        androidScroll.scrollIntoView("WebView");
     }
 
 }

@@ -16,12 +16,12 @@ public class PhotosPage extends BaseAndroidPage {
     }
 
     public PhotosPage clickGalleryBtn() {
-        click.click(AppiumBy.accessibilityId("Gallery"));
+        androidClick.click(AppiumBy.accessibilityId("Gallery"));
         return this;
     }
 
     public PhotosPage clickPhotosBtn() {
-        click.click(By.xpath("//android.widget.TextView[@content-desc='1. Photos']"));
+        androidClick.click(By.xpath("//android.widget.TextView[@content-desc='1. Photos']"));
         return this;
     }
 

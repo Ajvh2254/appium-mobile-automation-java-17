@@ -1,13 +1,13 @@
-package cuzi.appiumAutomation.utilities;
+package cuzi.appiumAutomation.utilities.androidutils;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.utilities.waiterutils.AndroidWaiter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
-public class IsDisplayed extends BaseAndroidPage {
+public class AndroidIsDisplayed extends BaseAndroidPage {
 
-    public IsDisplayed() {
+    public AndroidIsDisplayed() {
         super();
     }
 
