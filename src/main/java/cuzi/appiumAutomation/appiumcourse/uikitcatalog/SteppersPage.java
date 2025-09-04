@@ -10,7 +10,7 @@ public class SteppersPage extends BaseIosPage {
     /***
      * Comes from Page Factory model provided by Appium and is instantiated within BasePage class
      */
-    @iOSXCUITFindBy(iOSNsPredicate = "name == 'Steppers'")
+    @iOSXCUITFindBy(accessibility = "Steppers")
     private By steppersBtn;
 
     public SteppersPage() {
@@ -18,12 +18,12 @@ public class SteppersPage extends BaseIosPage {
     }
 
     public SteppersPage clickSteppersBtn() {
-        iosClick.iosClick(steppersBtn);
+        iosClick.click(AppiumBy.iOSNsPredicateString("name == 'Steppers'"));
         return this;
     }
 
     public void clickAndHoldSteppersBtn() {
-        iosClick.iosLongClick(AppiumBy.iOSClassChain(
+        iosClick.longClick(AppiumBy.iOSClassChain(
                 "**/XCUIElementTypeButton[`name == 'Increment'`][3]"), 5000);
     }
 

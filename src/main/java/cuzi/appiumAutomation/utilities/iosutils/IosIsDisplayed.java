@@ -4,11 +4,11 @@ import cuzi.appiumAutomation.utilities.waiterutils.IosWaiter;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.By;
 
-public class IOSIsDisplayed {
+public class IosIsDisplayed {
 
     private final IosWaiter iosWaiter;
 
-    public IOSIsDisplayed(IOSDriver driver) {
+    public IosIsDisplayed(IOSDriver driver) {
         this.iosWaiter = new IosWaiter(driver);
     }
 

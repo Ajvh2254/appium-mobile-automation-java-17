@@ -13,7 +13,7 @@ public class DragAndDropPage extends BaseAndroidPage {
     }
 
     public DragAndDropPage clickDragANdDropBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Drag and Drop"));
+        androidClick.click(AppiumBy.accessibilityId("Drag and Drop"));
         return this;
     }
 

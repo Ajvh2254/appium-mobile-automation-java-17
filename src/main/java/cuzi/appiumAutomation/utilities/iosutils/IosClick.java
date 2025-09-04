@@ -20,7 +20,7 @@ public class IosClick {
         this.iosWait = new IosWaiter(driver);
     }
 
-    public void iosClick(By locator) {
+    public void click(By locator) {
         try {
             iosWait.waitForElementToBeClickable(locator);
             iosDriver.findElement(locator).click();
@@ -31,7 +31,7 @@ public class IosClick {
         }
     }
 
-    public void iosLongClick(By locator, int milliseconds) {
+    public void longClick(By locator, int milliseconds) {
         try {
             iosWait.waitForElementToBeClickable(locator);
             WebElement element = iosDriver.findElement(locator);

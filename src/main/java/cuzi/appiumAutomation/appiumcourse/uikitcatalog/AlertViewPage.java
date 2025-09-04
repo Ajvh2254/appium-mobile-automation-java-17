@@ -1,8 +1,6 @@
 package cuzi.appiumAutomation.appiumcourse.uikitcatalog;
 
 import cuzi.appiumAutomation.base.BaseIosPage;
-import cuzi.appiumAutomation.utilities.SendKeys;
-import cuzi.appiumAutomation.utilities.iosutils.IosClick;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -14,22 +12,22 @@ public class AlertViewPage extends BaseIosPage {
     }
 
     public AlertViewPage clickTextEntryBox() {
-        iosClick.iosClick(AppiumBy.iOSNsPredicateString("name == 'Text Entry'"));
+        iosClick.click(AppiumBy.iOSNsPredicateString("name == 'Text Entry'"));
         return this;
     }
 
     public AlertViewPage sendTextEntryKeys() {
-        SendKeys.iosSendKeys(By.xpath("//XCUIElementTypeTextField"), "Yo");
+        iosSendKeys.sendKeys(By.xpath("//XCUIElementTypeTextField"), "Yo");
         return this;
     }
 
     public AlertViewPage clickOkBtn() {
-        iosClick.iosClick(AppiumBy.iOSNsPredicateString("type == 'XCUIElementTypeButton' AND name == 'OK'"));
+        iosClick.click(AppiumBy.iOSNsPredicateString("type == 'XCUIElementTypeButton' AND name == 'OK'"));
         return this;
     }
 
     public AlertViewPage clickConfirmBtn() {
-        iosClick.iosClick(AppiumBy.iOSNsPredicateString("name BEGINSWITH[c] 'confirm'"));
+        iosClick.click(AppiumBy.iOSNsPredicateString("name BEGINSWITH[c] 'confirm'"));
         return this;
     }
 

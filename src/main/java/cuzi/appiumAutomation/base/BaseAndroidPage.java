@@ -1,18 +1,17 @@
 package cuzi.appiumAutomation.base;
 
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
-import cuzi.appiumAutomation.utilities.*;
-import cuzi.appiumAutomation.utilities.androidutils.PressKey;
+import cuzi.appiumAutomation.utilities.androidutils.*;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.support.PageFactory;
 
 public class BaseAndroidPage {
 
-    protected static Click click;
+    protected static AndroidClick androidClick;
     protected static DragAndDrop dragAndDrop;
-    protected static IsDisplayed isDisplayed;
+    protected static AndroidIsDisplayed androidIsDisplayed;
     protected static PressKey pressKey;
-    protected static Scroll scroll;
+    protected static AndroidScroll androidScroll;
     protected static Swipe swipe;
 
     public BaseAndroidPage() {
@@ -20,11 +19,11 @@ public class BaseAndroidPage {
     }
 
     public static void initializeUtilities() {
-        click = new Click();
+        androidClick = new AndroidClick();
         dragAndDrop = new DragAndDrop();
-        isDisplayed = new IsDisplayed();
+        androidIsDisplayed = new AndroidIsDisplayed();
         pressKey = new PressKey();
-        scroll = new Scroll();
+        androidScroll = new AndroidScroll();
         swipe = new Swipe();
     }
 

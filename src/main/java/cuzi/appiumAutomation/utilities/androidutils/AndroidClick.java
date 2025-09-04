@@ -1,4 +1,4 @@
-package cuzi.appiumAutomation.utilities;
+package cuzi.appiumAutomation.utilities.androidutils;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
@@ -9,13 +9,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
-public class Click extends BaseAndroidPage {
+public class AndroidClick extends BaseAndroidPage {
 
-    public Click() {
+    public AndroidClick() {
         super();
     }
 
-    public void androidClick(By locator) {
+    public void click(By locator) {
         try {
             AndroidWaiter.waitForElementToBeClickable(locator);
             AndroidDriverManager.getAndroidDriver().findElement(locator).click();
@@ -40,7 +40,7 @@ public class Click extends BaseAndroidPage {
         }
     }
 
-    public void androidLongClick(By locator, int milliseconds) {
+    public void longClick(By locator, int milliseconds) {
         try {
             AndroidWaiter.waitForElementToBeClickable(locator);
             WebElement element = AndroidDriverManager.getAndroidDriver().findElement(locator);

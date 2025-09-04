@@ -14,12 +14,12 @@ public class ProductPage extends BaseAndroidPage {
     }
 
     public ProductPage isProductPageDisplayed() {
-        isDisplayed.isElementDisplayed(By.id("com.androidsample.generalstore:id/toolbar_title"));
+        androidIsDisplayed.isElementDisplayed(By.id("com.androidsample.generalstore:id/toolbar_title"));
         return this;
     }
 
     public ProductPage scrollProductIntoView() {
-        scroll.scrollIntoView("Jordan 6 Rings");
+        androidScroll.scrollIntoView("Jordan 6 Rings");
         return this;
     }
 
@@ -45,7 +45,7 @@ public class ProductPage extends BaseAndroidPage {
     }
 
     public void clickCartBtn() {
-        click.androidClick(By.xpath(
+        androidClick.click(By.xpath(
                 "//android.widget.ImageButton[@resource-id='com.androidsample.generalstore:id/appbar_btn_cart']"));
     }
 

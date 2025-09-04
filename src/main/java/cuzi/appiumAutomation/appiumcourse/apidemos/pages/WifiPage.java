@@ -2,7 +2,7 @@ package cuzi.appiumAutomation.appiumcourse.apidemos.pages;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
-import cuzi.appiumAutomation.utilities.SendKeys;
+import cuzi.appiumAutomation.utilities.androidutils.AndroidSendKeys;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.Activity;
@@ -26,18 +26,18 @@ public class WifiPage extends BaseAndroidPage {
     }
 
     public WifiPage clickPreferenceBtn() {
-        click.androidClick(AppiumBy.accessibilityId("Preference"));
+        androidClick.click(AppiumBy.accessibilityId("Preference"));
         return this;
     }
 
     public WifiPage clickDependenciesBtn() {
-        click.mobileClick(AppiumBy.xpath(
+        androidClick.mobileClick(AppiumBy.xpath(
                 "//android.widget.TextView[@content-desc='3. Preference dependencies']"));
         return this;
     }
 
     public WifiPage clickCheckboxBtn() {
-        click.androidClick(By.id("android:id/checkbox"));
+        androidClick.click(By.id("android:id/checkbox"));
         return this;
     }
 
@@ -48,7 +48,7 @@ public class WifiPage extends BaseAndroidPage {
     }
 
     public WifiPage clickWifiSettingsBtn() {
-        click.mobileClick(By.xpath("(//android.widget.RelativeLayout)[2]"));
+        androidClick.mobileClick(By.xpath("(//android.widget.RelativeLayout)[2]"));
         return this;
     }
 
@@ -72,7 +72,7 @@ public class WifiPage extends BaseAndroidPage {
     }
 
     public WifiPage sendWifiName() {
-        SendKeys.androidSendKeys(By.id("android:id/edit"), "FoxHounds Wifi");
+        AndroidSendKeys.sendKeys(By.id("android:id/edit"), "FoxHounds Wifi");
         return this;
     }
 

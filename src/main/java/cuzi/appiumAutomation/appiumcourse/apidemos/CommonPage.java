@@ -10,7 +10,7 @@ public class CommonPage extends BaseAndroidPage {
     }
 
     public static void clickViewsBtn() {
-        click.mobileClick(AppiumBy.accessibilityId("Views"));
+        androidClick.mobileClick(AppiumBy.accessibilityId("Views"));
     }
 
 }

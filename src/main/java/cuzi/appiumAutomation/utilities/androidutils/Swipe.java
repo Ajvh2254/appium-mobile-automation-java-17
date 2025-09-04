@@ -1,4 +1,4 @@
-package cuzi.appiumAutomation.utilities;
+package cuzi.appiumAutomation.utilities.androidutils;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
