@@ -16,7 +16,6 @@ public class IosClick {
 
     public IosClick(IOSDriver driver) {
         iosDriver = driver;
-        System.out.println("IosClick - IOS Driver initialized: " + System.identityHashCode(iosDriver));
         this.iosWait = new IosWaiter(driver);
     }
 

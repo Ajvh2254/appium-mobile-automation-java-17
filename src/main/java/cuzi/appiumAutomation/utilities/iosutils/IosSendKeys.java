@@ -9,7 +9,6 @@ public class IosSendKeys {
 
     public IosSendKeys(IOSDriver driver) {
         iosDriver = driver;
-        System.out.println("IosScroll - Ios Driver initialized: " + System.identityHashCode(iosDriver));
     }
 
     public void sendKeys(By locator, String text) {

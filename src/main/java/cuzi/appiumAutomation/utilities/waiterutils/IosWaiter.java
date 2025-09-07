@@ -14,7 +14,6 @@ public class IosWaiter {
 
     public IosWaiter(IOSDriver driver) {
         this.iosDriver = driver;
-        System.out.println("IosWaiter - IOS Driver initialized: " + System.identityHashCode(iosDriver));
         this.wait = new WebDriverWait(iosDriver, Duration.ofSeconds(10));
     }
 

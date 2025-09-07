@@ -17,11 +17,6 @@ public class SteppersPage extends BaseIosPage {
         super();
     }
 
-    public SteppersPage clickSteppersBtn() {
-        iosClick.click(AppiumBy.iOSNsPredicateString("name == 'Steppers'"));
-        return this;
-    }
-
     public void clickAndHoldSteppersBtn() {
         iosClick.longClick(AppiumBy.iOSClassChain(
                 "**/XCUIElementTypeButton[`name == 'Increment'`][3]"), 5000);
