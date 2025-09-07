@@ -26,12 +26,16 @@ public class HomePage extends BaseIosPage {
         iosClick.click(AppiumBy.iOSNsPredicateString("name == 'Steppers'"));
     }
 
+    public void clickPickerViewBtn() {
+        iosClick.click(AppiumBy.accessibilityId("Picker View"));
+    }
+
     public void printChildCell() {
         WebElement parentTable = iosDriver.findElement(AppiumBy.className("XCUIElementTypeTable"));
         List<WebElement> childCells = parentTable.findElements(AppiumBy.xpath(
                 "//XCUIElementTypeTable/XCUIElementTypeCell"));
         for (int i = 0; i < childCells.size(); i++) {
-            System.out.println("Checking if i (" + i + ") is less than ("+ childCells.size() +")");
+            System.out.println("Checking if i (" + i + ") is less than (" + childCells.size() + ")");
             System.out.println("Child cell index: " + i);
         }
     }
