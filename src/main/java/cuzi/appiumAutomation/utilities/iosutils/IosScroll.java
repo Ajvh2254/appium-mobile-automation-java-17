@@ -15,7 +15,6 @@ public class IosScroll {
 
     public IosScroll(IOSDriver driver) {
         iosDriver = driver;
-        System.out.println("IosScroll = Ios Driver initialized: " + System.identityHashCode(iosDriver));
     }
 
     public void scroll(By locator) {

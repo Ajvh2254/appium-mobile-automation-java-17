@@ -1,11 +1,8 @@
 package appiumtests.iostests;
 
-import cuzi.appiumAutomation.appiumcourse.uikitcatalog.AlertViewPage;
-import cuzi.appiumAutomation.appiumcourse.uikitcatalog.PickerViewPage;
-import cuzi.appiumAutomation.appiumcourse.uikitcatalog.SteppersPage;
+import cuzi.appiumAutomation.appiumcourse.uikitcatalog.*;
 import basetests.BaseIosTests;
 import cuzi.appiumAutomation.appiumcourse.uikitcatalog.ios.HomePage;
-import io.appium.java_client.ios.IOSDriver;
 import org.testng.annotations.Test;
 
 public class UiKitCatalogTests extends BaseIosTests {
@@ -13,8 +10,8 @@ public class UiKitCatalogTests extends BaseIosTests {
     @Test
     public void AlertViewPageTest() {
         HomePage homePage = new HomePage();
-        homePage.isUiKitCatalogPageDisplayed();
-        homePage.clickAlertViewsBtn();
+        homePage.isUiKitCatalogPageDisplayed()
+                .clickAlertViewsBtn();
 
         AlertViewPage alertViewPage = new AlertViewPage();
         alertViewPage.clickTextEntryBox()
@@ -26,9 +23,12 @@ public class UiKitCatalogTests extends BaseIosTests {
 
     @Test
     public void iosLongClickTest() {
+        HomePage homePage = new HomePage();
+        homePage.isUiKitCatalogPageDisplayed()
+                .clickSteppersBtn();
+
         SteppersPage steppersPage = new SteppersPage();
-        steppersPage.clickSteppersBtn()
-                .clickAndHoldSteppersBtn();
+        steppersPage.clickAndHoldSteppersBtn();
     }
 
     @Test
@@ -41,6 +41,13 @@ public class UiKitCatalogTests extends BaseIosTests {
         pickerViewPage.assertGreenColorValue();
         pickerViewPage.iosScrollBlueColorValue();
         pickerViewPage.assertBlueColorValue();
+    }
+
+    @Test
+    public void printChildCellsTest() {
+        HomePage homePage = new HomePage();
+        homePage.isUiKitCatalogPageDisplayed()
+                .printChildCell();
     }
 
 }
