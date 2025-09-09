@@ -30,13 +30,35 @@ public class HomePage extends BaseIosPage {
         iosClick.click(AppiumBy.accessibilityId("Picker View"));
     }
 
-    public void printChildCell() {
+    public void printAllChildCellsFromParentLocator() {
         WebElement parentTable = iosDriver.findElement(AppiumBy.className("XCUIElementTypeTable"));
-        List<WebElement> childCells = parentTable.findElements(AppiumBy.xpath(
+        System.out.println(parentTable + " found");
+        List<WebElement> childCells = iosDriver.findElements(AppiumBy.xpath(
+                "//XCUIElementTypeTable/XCUIElementTypeCell"));
+        System.out.println("Total child cells found: " + childCells.size());
+    }
+
+    public void printChildIndicesFromParentLocator() {
+        List<WebElement> childCells = iosDriver.findElements(AppiumBy.xpath(
                 "//XCUIElementTypeTable/XCUIElementTypeCell"));
         for (int i = 0; i < childCells.size(); i++) {
-            System.out.println("Checking if i (" + i + ") is less than (" + childCells.size() + ")");
             System.out.println("Child cell index: " + i);
+        }
+    }
+
+    public void followAlongPrintChildCellIndicesFromParentLocator() {
+        WebElement parentTable = iosDriver.findElement(AppiumBy.className("XCUIElementTypeTable"));
+        System.out.println("Parent table stored in variable: " + parentTable);
+
+        List<WebElement> childCells = iosDriver.findElements(AppiumBy.xpath(
+                "//XCUIElementTypeTable/XCUIElementTypeCell"));
+        System.out.println("Child cells stored in list: " + childCells);
+
+        System.out.println("Printing total number of child cells");
+        System.out.println("Total child cells found: " + childCells.size());
+
+        for (int i = 0; i < childCells.size(); i++) {
+            System.out.println("Checking if i (" + i + ") is less than (" + childCells.size() + ")");
         }
     }
 

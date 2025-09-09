@@ -46,11 +46,4 @@ public class UiKitCatalogTests extends BaseIosTests {
                 .assertBlueColorValue();
     }
 
-    @Test
-    public void printChildCellsTest() {
-        HomePage homePage = new HomePage();
-        homePage.isUiKitCatalogPageDisplayed()
-                .printChildCell();
-    }
-
 }
