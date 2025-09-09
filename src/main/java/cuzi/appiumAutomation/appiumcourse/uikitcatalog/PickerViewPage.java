@@ -6,33 +6,33 @@ import org.testng.Assert;
 
 public class PickerViewPage extends BaseIosPage {
 
-
-    public void clickPickerViewBtn() {
-        iosClick.click(AppiumBy.accessibilityId("Picker View"));
-    }
-
-    public void iosScrollRedColorValue() {
+    public PickerViewPage iosScrollRedColorValue() {
         iosSendKeys.sendKeys(AppiumBy.accessibilityId("Red color component value"), "80");
+        return this;
     }
 
-    public void assertScrollRedValue() {
+    public PickerViewPage assertScrollRedValue() {
         String number = iosDriver.findElement(
                 AppiumBy.accessibilityId("Red color component value")).getText();
         Assert.assertEquals(number, "80");
+        return this;
     }
 
-    public void iosScrollGreenColorValue() {
+    public PickerViewPage iosScrollGreenColorValue() {
         iosSendKeys.sendKeys(AppiumBy.accessibilityId("Green color component value"), "220");
+        return this;
     }
 
-    public void assertGreenColorValue() {
+    public PickerViewPage assertGreenColorValue() {
         String number = iosDriver.findElement(
                 AppiumBy.accessibilityId("Green color component value")).getText();
         Assert.assertEquals(number, "220");
+        return this;
     }
 
-    public void iosScrollBlueColorValue() {
+    public PickerViewPage iosScrollBlueColorValue() {
         iosSendKeys.sendKeys(AppiumBy.iOSNsPredicateString("label == 'Blue color component value'"), "105");
+        return this;
     }
 
     public void assertBlueColorValue() {

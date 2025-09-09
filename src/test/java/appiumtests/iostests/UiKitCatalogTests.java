@@ -33,14 +33,17 @@ public class UiKitCatalogTests extends BaseIosTests {
 
     @Test
     public void iosScrollTest() {
+        HomePage homePage = new HomePage();
+        homePage.isUiKitCatalogPageDisplayed()
+                .clickPickerViewBtn();
+
         PickerViewPage pickerViewPage = new PickerViewPage();
-        pickerViewPage.clickPickerViewBtn();
-        pickerViewPage.iosScrollRedColorValue();
-        pickerViewPage.assertScrollRedValue();
-        pickerViewPage.iosScrollGreenColorValue();
-        pickerViewPage.assertGreenColorValue();
-        pickerViewPage.iosScrollBlueColorValue();
-        pickerViewPage.assertBlueColorValue();
+        pickerViewPage.iosScrollRedColorValue()
+                .assertScrollRedValue()
+                .iosScrollGreenColorValue()
+                .assertGreenColorValue()
+                .iosScrollBlueColorValue()
+                .assertBlueColorValue();
     }
 
     @Test
