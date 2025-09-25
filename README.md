@@ -29,16 +29,19 @@
 
 5. Base folder sets utility drivers
 
-   <img width="397" height="367" alt="image" src="https://github.com/user-attachments/assets/45f924dd-b5e4-4d46-a3fc-92fb5da8d79a" />
+<img width="397" height="367" alt="image" src="https://github.com/user-attachments/assets/45f924dd-b5e4-4d46-a3fc-92fb5da8d79a" />
 
 
 6. Appium Course folder contains classes interacting with mobile apps
 
-   <img width="374" height="350" alt="image" src="https://github.com/user-attachments/assets/e72fa42b-7fa5-4ad7-895a-0a1761d396b9" />
+<img width="374" height="350" alt="image" src="https://github.com/user-attachments/assets/e72fa42b-7fa5-4ad7-895a-0a1761d396b9" />
 
 7. Appium Test folder contains various mobile test cases
 
-   <img width="424" height="201" alt="image" src="https://github.com/user-attachments/assets/e760fd9f-029a-46ce-be37-203297507e30" />
+<img width="424" height="201" alt="image" src="https://github.com/user-attachments/assets/e760fd9f-029a-46ce-be37-203297507e30" />
 
 ### How to execute tests
 
+In order to execute tests you must first emulate device depending on which Base test is being extended in the class.
+<img width="514" height="112" alt="image" src="https://github.com/user-attachments/assets/d179399d-a763-4149-9cc9-bda8c6ab0493" />
+<img width="377" height="350" alt="image" src="https://github.com/user-attachments/assets/0344a585-f3a7-461b-a30f-ab3ebe14a1f6" />
