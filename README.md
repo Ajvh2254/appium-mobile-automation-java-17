@@ -2,7 +2,7 @@
 
 ### System Requirements
 1. Java 17
-2. 
+2. Appium
 
 ### Features
 1. TestNG
