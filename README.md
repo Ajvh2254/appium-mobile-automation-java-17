@@ -1,11 +1,11 @@
 # Appium Automation Java 17
 
 ### System Requirements
-1. Java 17
-2. Appium
+  Java 17
+  Appium
 
 ### Features
-1. TestNG
+  TestNG
 
 ### Structure
 
