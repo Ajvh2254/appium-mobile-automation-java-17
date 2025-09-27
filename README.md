@@ -45,5 +45,6 @@
 - In order to execute tests you must first emulate device depending on which Base test is being extended in the class.
 <img width="514" height="112" alt="image" src="https://github.com/user-attachments/assets/d179399d-a763-4149-9cc9-bda8c6ab0493" />
 <img width="377" height="350" alt="image" src="https://github.com/user-attachments/assets/0344a585-f3a7-461b-a30f-ab3ebe14a1f6" />
+
 - Once the device has been emulated now you can execute the test by pressing the play button next to the test
 <img width="362" height="79" alt="image" src="https://github.com/user-attachments/assets/342b0179-4f59-4699-9c81-3811548b6716" />
