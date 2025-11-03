@@ -1,7 +1,7 @@
 package appiumtests.androidtests;
 
-import cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.AccessibilityPage;
-import cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.AnimationPage;
+import cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.apidemos.AccessibilityPage;
+import cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.apidemos.AnimationPage;
 import basetests.BaseAPIDemosTests;
 import org.testng.annotations.Test;
 
