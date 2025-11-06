@@ -1,4 +1,4 @@
-package cuzi.appiumAutomation.appiumcourse.apidemos.manualtests;
+package cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.apidemos;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;

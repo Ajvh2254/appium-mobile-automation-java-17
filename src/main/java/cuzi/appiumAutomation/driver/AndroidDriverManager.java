@@ -33,6 +33,15 @@ public class AndroidDriverManager {
         }
     }
 
+    public static void createTodoListDriver() {
+        try {
+            setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), todoListCapabilities()));
+            System.out.println("Initiating android driver, add capabilities and install app");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void quitAndroidDriver() {
         getAndroidDriver().quit();
     }
@@ -69,6 +78,12 @@ public class AndroidDriverManager {
         return uiAutomator2Options = new UiAutomator2Options()
                 .setDeviceName("Pixel_8_Pro")
                 .setApp("apps/General-Store.apk");
+    }
+
+    private static UiAutomator2Options todoListCapabilities() {
+        return uiAutomator2Options = new UiAutomator2Options()
+                .setAvd("Pixel_8_Pro")
+                .setApp("apps/Todoist.apk");
     }
 
 }
