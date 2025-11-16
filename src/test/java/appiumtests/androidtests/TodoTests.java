@@ -13,7 +13,7 @@ public class TodoTests extends BaseTodoTests {
                 .isAdvertisingTextDisplayed()
                 .isSkipBtnDisplayed()
                 .isPageIndicatorDisplayed()
-                .isNextBtnDisplayed();
+                .isNextBtnClickable();
     }
 
 }

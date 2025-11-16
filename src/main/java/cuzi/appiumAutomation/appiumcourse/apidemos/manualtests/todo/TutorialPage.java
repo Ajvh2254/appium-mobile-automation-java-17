@@ -2,6 +2,7 @@ package cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.todo;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
+import cuzi.appiumAutomation.utilities.waiterutils.AndroidWaiter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -42,10 +43,8 @@ public class TutorialPage extends BaseAndroidPage {
         return this;
     }
 
-    public void isNextBtnDisplayed() {
-        boolean nextBtn = androidIsDisplayed.isElementDisplayed(By.id(
-                "org.secuso.privacyfriendlytodolist:id/btn_next"));
-        Assert.assertTrue(nextBtn);
+    public void isNextBtnClickable() {
+        AndroidWaiter.waitForElementToBeClickable(By.id("org.secuso.privacyfriendlytodolist:id/btn_next"));
     }
 
 }
