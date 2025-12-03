@@ -13,8 +13,8 @@ public class TodoTests extends BaseTodoTests {
         Assert.assertEquals(tutorialPage.isWelcomeTextDisplayed(), "Welcome!");
         Assert.assertTrue(tutorialPage.isAdvertisingTextDisplayed());
         Assert.assertTrue(tutorialPage.isSkipBtnDisplayed());
-        tutorialPage.isPageIndicatorDisplayed()
-                .isNextBtnClickable();
+        tutorialPage.isPageIndicatorDisplayed();
+        Assert.assertTrue(tutorialPage.isNextBtnClickable());
     }
 
 }

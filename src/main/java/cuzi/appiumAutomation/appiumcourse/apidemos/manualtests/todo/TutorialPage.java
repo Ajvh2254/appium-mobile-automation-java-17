@@ -24,24 +24,28 @@ public class TutorialPage extends BaseAndroidPage {
     }
 
     public boolean isSkipBtnDisplayed() {
-        boolean skipBtn = androidIsDisplayed.isElementDisplayed(By.id(
-                "org.secuso.privacyfriendlytodolist:id/btn_skip"));
+        androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/btn_skip"));
         return true;
     }
 
-    public TutorialPage isPageIndicatorDisplayed() {
+    public void isPageIndicatorDisplayed() {
         By pageIndicator = By.xpath("//android.widget.TextView[@text='•']");
         List<WebElement> pageIndicators = AndroidDriverManager.getAndroidDriver().findElements(pageIndicator);
         for (int i = 0; i < pageIndicators.size(); i++) {
             androidIsDisplayed.isElementDisplayed(pageIndicator);
         }
-        return this;
     }
 
-    public void isNextBtnClickable() {
+    public boolean isNextBtnClickable() {
         By nextBtn = By.id("org.secuso.privacyfriendlytodolist:id/btn_next");
-        AndroidWaiter.waitForElementToBeClickable(nextBtn);
-        System.out.println(nextBtn + " is clickable");
+        try {
+            AndroidWaiter.waitForElementToBeClickable(nextBtn);
+            System.out.println(nextBtn + " is clickable");
+            return true;
+        } catch (Exception e) {
+            System.out.println(nextBtn + " is not clickable");
+            return false;
+        }
     }
 
 }
