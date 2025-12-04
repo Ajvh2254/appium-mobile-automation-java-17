@@ -4,15 +4,18 @@ import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
 import cuzi.appiumAutomation.utilities.androidutils.AndroidIsTextDisplayed;
 import cuzi.appiumAutomation.utilities.waiterutils.AndroidWaiter;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+@Log4j2
 public class TutorialPage extends BaseAndroidPage {
 
     public String isWelcomeTextDisplayed() {
         By welcomeHeader = By.xpath("//*[@text='Welcome!']");
+        log.info(welcomeHeader + " is displayed");
         // Using "current node" represented with an asterisk Example: //*[]
         return AndroidIsTextDisplayed.getText(welcomeHeader);
     }
