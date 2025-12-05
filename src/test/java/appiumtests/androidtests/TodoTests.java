@@ -1,7 +1,7 @@
 package appiumtests.androidtests;
 
 import basetests.BaseTodoTests;
-import cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.todo.TutorialPage;
+import cuzi.appiumAutomation.appiumcourse.manualtests.todo.TutorialPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

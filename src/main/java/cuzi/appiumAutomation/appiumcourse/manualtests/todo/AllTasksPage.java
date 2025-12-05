@@ -1,4 +1,4 @@
-package cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.todo;
+package cuzi.appiumAutomation.appiumcourse.manualtests.todo;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 

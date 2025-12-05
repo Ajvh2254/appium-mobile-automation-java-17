@@ -1,4 +1,4 @@
-package cuzi.appiumAutomation.appiumcourse.apidemos.manualtests.todolist;
+package cuzi.appiumAutomation.appiumcourse.manualtests.todolist;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.utilities.androidutils.AndroidSendKeys;
