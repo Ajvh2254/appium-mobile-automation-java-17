@@ -4,8 +4,10 @@ import cuzi.appiumAutomation.driver.IosDriverManager;
 import cuzi.appiumAutomation.utilities.iosutils.*;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.support.PageFactory;
 
+@Log4j2
 public class BaseIosPage {
 
     protected IOSDriver iosDriver;
@@ -21,7 +23,7 @@ public class BaseIosPage {
      */
     public BaseIosPage() {
         this.iosDriver = IosDriverManager.getIosDriver(); // important to assign the driver to the instance variable
-        System.out.println("BaseIosPage - IOS Driver initialized" + System.identityHashCode(iosDriver)); // Print unique identifier ID for the driver instance
+        log.info("BaseIosPage - IOS Driver initialized{}", System.identityHashCode(iosDriver));
         PageFactory.initElements(new AppiumFieldDecorator(iosDriver), this); // Initialize page elements
         initializeUtilities(); // Initialize utility classes
     }
