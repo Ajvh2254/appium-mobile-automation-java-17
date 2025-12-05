@@ -4,11 +4,13 @@ import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
 import cuzi.appiumAutomation.utilities.waiterutils.AndroidWaiter;
 import com.google.common.collect.ImmutableMap;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 
+@Log4j2
 public class AndroidClick extends BaseAndroidPage {
 
     public AndroidClick() {
@@ -19,9 +21,9 @@ public class AndroidClick extends BaseAndroidPage {
         try {
             AndroidWaiter.waitForElementToBeClickable(locator);
             AndroidDriverManager.getAndroidDriver().findElement(locator).click();
-            System.out.println("Clicked on element: " + locator);
+            log.info("Clicked on element: {}", locator);
         } catch (Exception e) {
-            System.out.println("Failed to click on element: " + locator);
+            log.info("Failed to click on element: {}", locator);
             e.printStackTrace();
         }
     }
@@ -33,9 +35,9 @@ public class AndroidClick extends BaseAndroidPage {
                     "mobile: clickGesture", ImmutableMap.of(
                             "elementId", ((RemoteWebElement) element).getId()
                     ));
-            System.out.println("Clicked on element: " + locator + " with mobile click gesture");
+            log.info("Mobile clicked on element: {}", locator);
         } catch (Exception e) {
-            System.out.println("Failed to click on element: " + locator);
+            log.info("Failed to mobile click on element: {}", locator);
             e.printStackTrace();
         }
     }
@@ -48,9 +50,9 @@ public class AndroidClick extends BaseAndroidPage {
                     "mobile: longClickGesture", ImmutableMap.of(
                             "elementId", ((RemoteWebElement) element).getId(),
                             "duration", milliseconds));
-            System.out.println("Long pressed element: " + locator);
+            log.info("Long pressed element: {}", locator);
         } catch (Exception e) {
-            System.out.println("Failed to long press element: " + locator);
+            log.info("Failed to long press element: {}", locator);
             e.printStackTrace();
         }
     }

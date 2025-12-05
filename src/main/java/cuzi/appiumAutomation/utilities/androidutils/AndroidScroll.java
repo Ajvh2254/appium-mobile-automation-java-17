@@ -4,8 +4,10 @@ import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.JavascriptExecutor;
 
+@Log4j2
 public class AndroidScroll extends BaseAndroidPage {
 
     public AndroidScroll() {
@@ -21,7 +23,7 @@ public class AndroidScroll extends BaseAndroidPage {
                             "direction", "down",
                             "percent", 1.0
                     ));
-        System.out.println("Scrolled down page");
+        log.info("Scrolled down page");
         } while (canScrollMore);
     }
 
@@ -29,7 +31,7 @@ public class AndroidScroll extends BaseAndroidPage {
         AndroidDriverManager.getAndroidDriver().findElement(AppiumBy.androidUIAutomator(
                 "new UiScrollable(new UiSelector()).scrollIntoView(text(\""+ text +"\"));"
         ));
-        System.out.println("Scrolled " + text + " into view");
+        log.info("Scrolled {} into view", text);
     }
 
 }
