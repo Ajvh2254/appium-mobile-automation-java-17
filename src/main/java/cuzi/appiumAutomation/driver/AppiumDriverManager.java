@@ -2,12 +2,14 @@ package cuzi.appiumAutomation.driver;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import lombok.extern.log4j.Log4j2;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+@Log4j2
 public class AppiumDriverManager {
 
     private static AppiumDriverLocalService appiumService = null;
@@ -19,7 +21,7 @@ public class AppiumDriverManager {
                 .withIPAddress("127.0.0.1")
                 .usingPort(4723)
                 .build();
-        System.out.println("Appium started at: " + appiumService.getUrl());
+        log.info("Appium started at: {}", appiumService.getUrl());
 
         appiumService.start();
         appiumService.clearOutPutStreams();
@@ -28,7 +30,7 @@ public class AppiumDriverManager {
     public static void stopAppium() {
         if (appiumExists()) {
             appiumService.stop();
-            System.out.println("Stopped Appium service");
+            log.info("Stopped Appium service");
         }
     }
 
@@ -47,7 +49,7 @@ public class AppiumDriverManager {
                     String[] parts = line.split("\\s+");
                     String pid = parts[1];
                     Runtime.getRuntime().exec("kill -9 " + pid);
-                    System.out.println("Killed Appium process with PID: " + pid);
+                    log.info("Killed Appium process with PID: {}", pid);
                 }
             }
         } catch (IOException e) {

@@ -2,9 +2,11 @@ package cuzi.appiumAutomation.utilities.androidutils;
 
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.utilities.waiterutils.AndroidWaiter;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
+@Log4j2
 public class AndroidIsDisplayed extends BaseAndroidPage {
 
     public AndroidIsDisplayed() {
@@ -14,10 +16,10 @@ public class AndroidIsDisplayed extends BaseAndroidPage {
     public boolean isElementDisplayed(By locator) {
         try {
             AndroidWaiter.waitForVisibilityOfElement(locator);
-            System.out.println(locator + " is visible");
+            log.info("{} is visible", locator);
             return true;
         } catch (Exception e) {
-            System.out.println(locator + " is not visible");
+            log.info("{} is not visible", locator);
             return false;
         }
     }
@@ -25,13 +27,13 @@ public class AndroidIsDisplayed extends BaseAndroidPage {
     public boolean isElementNotDisplayed(By locator) {
         try {
             AndroidWaiter.waitForInvisibilityOfElement(locator);
-            System.out.println(locator + " is not visible");
+            log.info("{} is not visible", locator);
             return true;
         } catch (NoSuchElementException e) {
-            System.out.println(locator + " not found, treating as not visible");
+            log.info("{} not found, treating as not visible", locator);
             return true;
         } catch (Exception e) {
-            System.out.println(locator + " is visible");
+            log.info("{} is visible", locator);
             return false;
         }
     }

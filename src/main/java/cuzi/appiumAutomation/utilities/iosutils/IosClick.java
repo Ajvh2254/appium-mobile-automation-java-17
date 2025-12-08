@@ -2,6 +2,7 @@ package cuzi.appiumAutomation.utilities.iosutils;
 
 import cuzi.appiumAutomation.utilities.waiterutils.IosWaiter;
 import io.appium.java_client.ios.IOSDriver;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -9,6 +10,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import java.util.HashMap;
 import java.util.Map;
 
+@Log4j2
 public class IosClick {
 
     private static IOSDriver iosDriver;
@@ -23,9 +25,9 @@ public class IosClick {
         try {
             iosWait.waitForElementToBeClickable(locator);
             iosDriver.findElement(locator).click();
-            System.out.println("Clicked on element: " + locator);
+            log.info("Clicked on element: {}", locator);
         } catch (Exception e) {
-            System.out.println("Failed to click on element: " + locator);
+            log.info("Failed to click on element: {}", locator);
             e.printStackTrace();
         }
     }
@@ -38,9 +40,9 @@ public class IosClick {
             params.put("element", ((RemoteWebElement)element).getId());
             params.put("duration", milliseconds);
             iosDriver.executeScript("mobile: touchAndHold", params);
-            System.out.println("Long pressed element: " + locator);
+            log.info("Long pressed element: {}", locator);
         } catch (Exception e) {
-            System.out.println("Failed to long press element: " + locator);
+            log.info("Failed to long press element: {}", locator);
             e.printStackTrace();
         }
     }

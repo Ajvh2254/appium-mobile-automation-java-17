@@ -4,11 +4,13 @@ import cuzi.appiumAutomation.base.BaseAndroidPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
+import lombok.extern.log4j.Log4j2;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
+@Log4j2
 public class AndroidDriverManager {
 
     private static final ThreadLocal<AndroidDriver> DRIVER = new ThreadLocal<>();
@@ -17,7 +19,7 @@ public class AndroidDriverManager {
     public static void createAPIDemosDriver() {
         try {
             setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), androidApiDemosCapabilities()));
-            System.out.println("Initiating android driver, add capabilities and install app");
+            log.info("Initiating android driver, add capabilities and install app");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -27,7 +29,7 @@ public class AndroidDriverManager {
     public static void createGeneralStoreDriver() {
         try {
             setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), generalStoreCapabilities()));
-            System.out.println("Initiating android driver, add capabilities and install app");
+            log.info("Initiating android driver, add capabilities and install app");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -36,7 +38,7 @@ public class AndroidDriverManager {
     public static void createTodoListDriver() {
         try {
             setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), todoListCapabilities()));
-            System.out.println("Initiating android driver, add capabilities and install app");
+            log.info("Initiating android driver, add capabilities and install app");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -45,7 +47,7 @@ public class AndroidDriverManager {
     public static void createTodoDriver() {
         try {
             setAndroidDriver(new AndroidDriver(new URL("http://localhost:4723"), todoCapabilities()));
-            System.out.println("Initiating android driver, add capabilities and install app");
+            log.info("Initiating android driver, add capabilities and install app");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

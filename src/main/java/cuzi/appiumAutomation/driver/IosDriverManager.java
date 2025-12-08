@@ -4,12 +4,14 @@ import cuzi.appiumAutomation.config.Config;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.remote.AutomationName;
+import lombok.extern.log4j.Log4j2;
 
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.Duration;
 
+@Log4j2
 public class IosDriverManager {
 
     private static IOSDriver iosdriver;
@@ -18,7 +20,7 @@ public class IosDriverManager {
     public static void createIosDriver() {
         try {
             setIosDriver(new IOSDriver(new URI("http://localhost:4723").toURL(), uiKitCapabilities()));
-            System.out.println("Initiating ios driver, add capabilities and install app");
+            log.info("Initiating ios driver, add capabilities and install app");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (URISyntaxException e) {
@@ -29,7 +31,7 @@ public class IosDriverManager {
 
     public static void quitIosDriver() {
         iosdriver.quit();
-        System.out.println("Quitting ios driver");
+        log.info("Quitting ios driver");
     }
 
     public static IOSDriver getIosDriver() {

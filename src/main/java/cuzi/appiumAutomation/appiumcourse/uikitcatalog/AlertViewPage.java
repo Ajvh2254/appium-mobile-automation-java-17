@@ -2,9 +2,11 @@ package cuzi.appiumAutomation.appiumcourse.uikitcatalog;
 
 import cuzi.appiumAutomation.base.BaseIosPage;
 import io.appium.java_client.AppiumBy;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+@Log4j2
 public class AlertViewPage extends BaseIosPage {
 
     public AlertViewPage() {
@@ -33,7 +35,7 @@ public class AlertViewPage extends BaseIosPage {
 
     public void getAlertText() {
         String text = iosDriver.findElement(AppiumBy.iOSNsPredicateString("name ENDSWITH 'complete sentence.'")).getText();
-        System.out.println(text);
+        log.info(text);
         Assert.assertEquals(text, "A message should be a short, complete sentence.");
     }
 

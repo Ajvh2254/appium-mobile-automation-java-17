@@ -2,10 +2,12 @@ package cuzi.appiumAutomation.appiumcourse.uikitcatalog.ios;
 
 import cuzi.appiumAutomation.base.BaseIosPage;
 import io.appium.java_client.AppiumBy;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+@Log4j2
 public class HomePage extends BaseIosPage {
 
     public HomePage() {
@@ -32,33 +34,33 @@ public class HomePage extends BaseIosPage {
 
     public void printAllChildCellsFromParentLocator() {
         WebElement parentTable = iosDriver.findElement(AppiumBy.className("XCUIElementTypeTable"));
-        System.out.println(parentTable + " found");
+        log.info("{} found", parentTable);
         List<WebElement> childCells = iosDriver.findElements(AppiumBy.xpath(
                 "//XCUIElementTypeTable/XCUIElementTypeCell"));
-        System.out.println("Total child cells found: " + childCells.size());
+        log.info("Total child cells found: {}", childCells.size());
     }
 
     public void printChildIndicesFromParentLocator() {
         List<WebElement> childCells = iosDriver.findElements(AppiumBy.xpath(
                 "//XCUIElementTypeTable/XCUIElementTypeCell"));
         for (int i = 0; i < childCells.size(); i++) {
-            System.out.println("Child cell index: " + i);
+            log.info("Child cell index: {}", i);
         }
     }
 
     public void followAlongPrintChildCellIndicesFromParentLocator() {
         WebElement parentTable = iosDriver.findElement(AppiumBy.className("XCUIElementTypeTable"));
-        System.out.println("Parent table stored in variable: " + parentTable);
+        log.info("Parent table stored in variable: {}", parentTable);
 
         List<WebElement> childCells = iosDriver.findElements(AppiumBy.xpath(
                 "//XCUIElementTypeTable/XCUIElementTypeCell"));
-        System.out.println("Child cells stored in list: " + childCells);
+        log.info("Child cells stored in list: {}", childCells);
 
-        System.out.println("Printing total number of child cells");
-        System.out.println("Total child cells found: " + childCells.size());
+        log.info("Printing total number of child cells");
+        log.info("Total child cells found: {}", childCells.size());
 
         for (int i = 0; i < childCells.size(); i++) {
-            System.out.println("Checking if i (" + i + ") is less than (" + childCells.size() + ")");
+            log.info("Checking if i ({}) is less than ({})", i, childCells.size());
         }
     }
 

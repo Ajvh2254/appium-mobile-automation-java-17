@@ -2,8 +2,10 @@ package cuzi.appiumAutomation.utilities.iosutils;
 
 import cuzi.appiumAutomation.utilities.waiterutils.IosWaiter;
 import io.appium.java_client.ios.IOSDriver;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 
+@Log4j2
 public class IosIsDisplayed {
 
     private final IosWaiter iosWaiter;
@@ -15,10 +17,10 @@ public class IosIsDisplayed {
     public boolean isElementDisplayed(By selector) {
         try {
             iosWaiter.waitForVisibilityOfElement(selector);
-            System.out.println(selector + " is visible");
+            log.info("{} is visible", selector);
             return true;
         } catch (Exception e) {
-            System.out.println(selector + " is not visible");
+            log.info( "{} is not visible", selector);
             return false;
         }
     }
