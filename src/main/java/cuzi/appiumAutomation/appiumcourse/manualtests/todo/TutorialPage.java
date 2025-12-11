@@ -15,6 +15,7 @@ public class TutorialPage extends BaseAndroidPage {
 
     public String isWelcomeTextDisplayed() {
         By welcomeHeader = By.xpath("//*[@text='Welcome!']");
+        log.info(welcomeHeader + " is displayed");
         // Using "current node" represented with an asterisk Example: //*[]
         return AndroidIsTextDisplayed.getText(welcomeHeader);
     }
@@ -48,56 +49,6 @@ public class TutorialPage extends BaseAndroidPage {
             log.info(nextBtn + " is not clickable");
             return false;
         }
-    }
-
-    public void clickNextBtn() {
-        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/btn_next"));
-    }
-
-    public String isListsHeaderDisplayed() {
-        By listsHeader = By.xpath("//android.widget.TextView[@text='Lists']");
-        return AndroidIsTextDisplayed.getText(listsHeader);
-    }
-
-    public boolean isListsTextDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.TextView[@text='You can manage your tasks in labeled To-Do lists.']"));
-        return true;
-    }
-
-    public boolean isReminderHeaderDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.TextView[@text='Reminder']"));
-        return true;
-    }
-
-    public String isReminderTextDisplayed() {
-        By reminderText = By.xpath(
-                "//*[@text='You can define deadlines and reminders for your tasks.']");
-        return AndroidIsTextDisplayed.getText(reminderText);
-    }
-
-    public boolean isEverythingHeaderHeaderDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.TextView[@text='Everything is important']"));
-        return true;
-    }
-
-    public boolean isEverythingTextDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.TextView[@text='You can add subtasks and the progress of their main task. Progress can be set manually or automatically by the number of done subtasks.']"));
-        return true;
-    }
-
-    public String isSecureHeaderDisplayed() {
-        By secureText = By.xpath("//android.widget.TextView[@text='Secure']");
-        return AndroidIsTextDisplayed.getText(secureText);
-    }
-
-    public boolean isSecureTextDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.TextView[@text='You can add a PIN-protection in the settings.']"));
-        return true;
     }
 
 }
