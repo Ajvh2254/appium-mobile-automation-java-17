@@ -41,6 +41,7 @@ public class TutorialPage extends BaseAndroidPage {
     }
 
     public boolean isNextBtnClickable() {
+        By nextBtn = By.id("org.secuso.privacyfriendlytodolist:id/btn_next");
         try {
             AndroidWaiter.waitForElementToBeClickable(nextBtn);
             log.info("{} is clickable", nextBtn);
