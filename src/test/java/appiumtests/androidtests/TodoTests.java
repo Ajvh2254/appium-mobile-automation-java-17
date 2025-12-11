@@ -31,7 +31,7 @@ public class TodoTests extends BaseTodoTests {
         Assert.assertEquals(tutorialPage.isEverythingHeaderDisplayed(), "Everything is important");
         Assert.assertTrue(tutorialPage.isEverythingTextDisplayed());
         tutorialPage.clickNextBtn();
-        Assert.assertEquals(tutorialPage.isSecureHeaderDisplayed(), "Secure");
+        Assert.assertEquals(tutorialPage.isSecureHeaderDisplayed(),"Secure");
         Assert.assertTrue(tutorialPage.isSecureTextDisplayed());
         tutorialPage.clickOkayBtn();
     }
