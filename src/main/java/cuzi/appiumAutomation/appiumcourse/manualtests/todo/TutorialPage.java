@@ -13,6 +13,8 @@ import java.util.List;
 @Log4j2
 public class TutorialPage extends BaseAndroidPage {
 
+    By nextBtn = By.id("org.secuso.privacyfriendlytodolist:id/btn_next");
+
     public String isWelcomeTextDisplayed() {
         By welcomeHeader = By.xpath("//*[@text='Welcome!']");
         // Using "current node" represented with an asterisk Example: //*[]
@@ -39,7 +41,6 @@ public class TutorialPage extends BaseAndroidPage {
     }
 
     public boolean isNextBtnClickable() {
-        By nextBtn = By.id("org.secuso.privacyfriendlytodolist:id/btn_next");
         try {
             AndroidWaiter.waitForElementToBeClickable(nextBtn);
             log.info("{} is clickable", nextBtn);
@@ -51,11 +52,11 @@ public class TutorialPage extends BaseAndroidPage {
     }
 
     public void clickNextBtn() {
-        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/btn_next"));
+        androidClick.click(nextBtn);
     }
 
     public String isListsHeaderDisplayed() {
-        By listsHeader = By.xpath("//android.widget.TextView[@text='Lists']");
+        By listsHeader = By.xpath("//*[@text='Lists']");
         return AndroidIsTextDisplayed.getText(listsHeader);
     }
 
@@ -66,21 +67,19 @@ public class TutorialPage extends BaseAndroidPage {
     }
 
     public boolean isReminderHeaderDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.TextView[@text='Reminder']"));
+        androidIsDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Reminder']"));
         return true;
     }
 
     public String isReminderTextDisplayed() {
         By reminderText = By.xpath(
-                "//*[@text='You can define deadlines and reminders for your tasks.']");
+                "//android.widget.TextView[@text='You can define deadlines and reminders for your tasks.']");
         return AndroidIsTextDisplayed.getText(reminderText);
     }
 
-    public boolean isEverythingHeaderHeaderDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.TextView[@text='Everything is important']"));
-        return true;
+    public String isEverythingHeaderDisplayed() {
+        By everythingHeader = By.xpath("//android.widget.TextView[@text='Everything is important']");
+        return AndroidIsTextDisplayed.getText(everythingHeader);
     }
 
     public boolean isEverythingTextDisplayed() {
@@ -90,14 +89,18 @@ public class TutorialPage extends BaseAndroidPage {
     }
 
     public String isSecureHeaderDisplayed() {
-        By secureText = By.xpath("//android.widget.TextView[@text='Secure']");
-        return AndroidIsTextDisplayed.getText(secureText);
+        By secureHeader = By.xpath("//android.widget.TextView[@text='Secure']");
+        return AndroidIsTextDisplayed.getText(secureHeader);
     }
 
     public boolean isSecureTextDisplayed() {
         androidIsDisplayed.isElementDisplayed(By.xpath(
                 "//android.widget.TextView[@text='You can add a PIN-protection in the settings.']"));
         return true;
+    }
+
+    public void clickOkayBtn() {
+        androidClick.click(nextBtn);
     }
 
 }
