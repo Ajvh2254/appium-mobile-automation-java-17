@@ -32,6 +32,10 @@ public class TutorialPage extends BaseAndroidPage {
         return true;
     }
 
+    public static void clickSkipBtn() {
+        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/btn_skip"));
+    }
+
     public void isPageIndicatorDisplayed() {
         By pageIndicator = By.xpath("//android.widget.TextView[@text='•']");
         List<WebElement> pageIndicators = AndroidDriverManager.getAndroidDriver().findElements(pageIndicator);
