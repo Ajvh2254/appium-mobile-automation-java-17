@@ -15,7 +15,10 @@ import java.util.List;
 @Log4j2
 public class AllTasksPage extends BaseAndroidPage {
 
+    static By searchBtn = AppiumBy.accessibilityId("Search");
     static By toDoListSearchBar = By.id("org.secuso.privacyfriendlytodolist:id/et_todo_list_name");
+    static By okayBtn = By.id("org.secuso.privacyfriendlytodolist:id/bt_todo_list_ok");
+    static By plusBtn = AppiumBy.accessibilityId("ADD NEW TASK >");
 
     public static void clickHamburgerMenuBtn() {
         androidClick.click(AppiumBy.accessibilityId("Open menu"));
@@ -45,12 +48,11 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static String isSearchBtnDisplayed() {
-        By searchBtn = AppiumBy.accessibilityId("Search");
         return AndroidIsTextDisplayed.getText(searchBtn);
     }
 
     public static void clickSearchBtn() {
-        androidClick.click(AppiumBy.accessibilityId("Search"));
+        androidClick.click(searchBtn);
     }
 
     public static boolean isSearchBarDisplayed() {
@@ -91,7 +93,6 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static boolean isOkayBtnClickable() {
-        By okayBtn = By.id("org.secuso.privacyfriendlytodolist:id/bt_todo_list_ok");
         try {
             AndroidWaiter.waitForElementToBeClickable(okayBtn);
             log.info("{} is clickable", okayBtn);
@@ -107,19 +108,115 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static void clickOkayBtn() {
-        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/bt_todo_list_ok"));
+        androidClick.click(okayBtn);
     }
 
     public static void clickMoreOptionsBtn() {
         androidClick.click(AppiumBy.accessibilityId("More options"));
     }
 
-    public static void isMoreOptionsDisplayed() {
-        By option = By.xpath("//android.widget.ListView/android.widget.LinearLayout");
-        List<WebElement> moreOptions = AndroidDriverManager.getAndroidDriver().findElements(option);
+    public static void isMoreOptionsListDisplayed() {
+        By options = By.xpath("//android.widget.ListView/android.widget.LinearLayout");
+        List<WebElement> moreOptions = AndroidDriverManager.getAndroidDriver().findElements(options);
         for (int i = 0; i < moreOptions.size(); i++) {
-            AndroidDriverManager.getAndroidDriver().findElement(option).isEnabled();
+            AndroidDriverManager.getAndroidDriver().findElement(options).isEnabled();
+            log.info("{} is enabled", options);
         }
+    }
+
+    public static void clickAllTasksBtn() {
+        androidClick.click(By.xpath(
+                "(//android.widget.RadioButton[@resource-id='org.secuso.privacyfriendlytodolist:id/radio'])[1]"));
+    }
+
+    public static boolean isInstructionalFlashingDisplayed() {
+        androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/initial_alert"));
+        return true;
+    }
+
+    public static String isNoTasksAvailableDisplayed() {
+        By noTasks = By.id("org.secuso.privacyfriendlytodolist:id/initial_alert");
+        return AndroidIsTextDisplayed.getText(noTasks);
+    }
+
+    public static boolean isAddNewTaskDisplayed() {
+        androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/second_alert"));
+        return true;
+    }
+
+    public static String isPlusBtnDisplayed() {
+        return AndroidIsTextDisplayed.getText(plusBtn);
+    }
+
+    public static void clickPlusBtn() {
+        androidClick.click(plusBtn);
+    }
+
+    public static boolean isNewToDoTaskDisplayed() {
+        androidIsDisplayed.isElementDisplayed(By.xpath(
+                "//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]"));
+        return true;
+    }
+
+    public static void sendNameKeys() {
+        By name = By.id("org.secuso.privacyfriendlytodolist:id/et_task_name");
+        AndroidSendKeys.sendKeys(name, "Jerald");
+    }
+
+    public static void sendDescriptionKeys() {
+        By description = By.id("org.secuso.privacyfriendlytodolist:id/et_task_description");
+        AndroidSendKeys.sendKeys(description, "goon");
+    }
+
+    public static void clickDeadlineBtn() {
+        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/et_task_description"));
+    }
+
+    public static void isPreviousMonthClickable() {
+        By previousMonth = AppiumBy.accessibilityId("Previous month");
+        try {
+            AndroidWaiter.waitForElementToBeClickable(previousMonth);
+            log.info("{} is clickable", previousMonth);
+        } catch (Exception e) {
+            log.info("{} is not clickable", previousMonth);
+        }
+    }
+
+    public static void clickNextMonthBtn() {
+        androidClick.click(AppiumBy.accessibilityId("Next month"));
+    }
+
+    public static boolean isCalendarDatesDisplayed() {
+        By calendarDate = By.xpath("//android.view.View[@content-desc='13 December 2025']");
+        List<WebElement> calendarDates = AndroidDriverManager.getAndroidDriver().findElements(calendarDate);
+        for (int i = 0; i < calendarDates.size(); i++) {
+            androidIsDisplayed.isElementDisplayed(calendarDate);
+        }
+        return true;
+    }
+
+    public static void clickCalendarDateBtn() {
+        androidClick.click(By.xpath("//android.view.View[@content-desc='13 December 2025']"));
+    }
+
+    public static String isNoDeadlineBtnDisplayed() {
+        By noDeadlineBtn = By.id("org.secuso.privacyfriendlytodolist:id/bt_deadline_nodeadline");
+        return AndroidIsTextDisplayed.getText(noDeadlineBtn);
+    }
+
+    public static void clickOkayDeadlineBtn() {
+        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/bt_deadline_ok"));
+    }
+
+    public static boolean isReminderBtnDisplayed() {
+        androidIsDisplayed.isElementDisplayed(By.id(
+                "org.secuso.privacyfriendlytodolist:id/tv_todo_list_reminder"));
+        return true;
+    }
+
+    public static void sendRecurrenceKeys() {
+        By recurrence = By.id("org.secuso.privacyfriendlytodolist:id/tv_task_recurrence_interval");
+        AndroidSendKeys.sendKeys(recurrence, "3");
     }
 
 }
