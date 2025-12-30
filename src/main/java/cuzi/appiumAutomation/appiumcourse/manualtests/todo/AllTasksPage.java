@@ -186,17 +186,14 @@ public class AllTasksPage extends BaseAndroidPage {
         androidClick.click(AppiumBy.accessibilityId("Next month"));
     }
 
-    public static boolean isCalendarDatesDisplayed() {
-        By calendarDate = By.xpath("//android.view.View[@content-desc='13 December 2025']");
-        List<WebElement> calendarDates = AndroidDriverManager.getAndroidDriver().findElements(calendarDate);
-        for (int i = 0; i < calendarDates.size(); i++) {
-            androidIsDisplayed.isElementDisplayed(calendarDate);
-        }
-        return true;
+    public static String getCalendarMonth() {
+        By calendarMonth = By.id("android:id/month_view");
+        log.info("{} is displyed", calendarMonth);
+        return AndroidIsTextDisplayed.getText(calendarMonth);
     }
 
     public static void clickCalendarDateBtn() {
-        androidClick.click(By.xpath("//android.view.View[@content-desc='13 December 2025']"));
+        androidClick.click(AppiumBy.accessibilityId("21 January 2026"));
     }
 
     public static String isNoDeadlineBtnDisplayed() {
@@ -217,6 +214,47 @@ public class AllTasksPage extends BaseAndroidPage {
     public static void sendRecurrenceKeys() {
         By recurrence = By.id("org.secuso.privacyfriendlytodolist:id/tv_task_recurrence_interval");
         AndroidSendKeys.sendKeys(recurrence, "3");
+    }
+
+    public static void clickRecurrencePatternBtn() {
+        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/tv_task_recurrence_pattern"));
+    }
+
+    public static void clickRecurrenceTypeBtn() {
+        androidClick.click(By.xpath("//android.widget.TextView[@resource-id='android:id/title' and @text='Week(s)']"));
+    }
+
+    public static void dragAndDropProgressSlider() {
+        By progressSlider = By.id("org.secuso.privacyfriendlytodolist:id/sb_task_progress");
+        dragAndDrop.dragAndDrop(progressSlider, 1266, 1767);
+    }
+
+    public static boolean getProgressSliderPercentage() {
+        androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/tv_task_progress"));
+        return true;
+    }
+
+    public static String isPriorityDisplayed() {
+        By priority = By.id("org.secuso.privacyfriendlytodolist:id/tv_task_priority");
+        return AndroidIsTextDisplayed.getText(priority);
+    }
+
+    public static void clickListBtn() {
+        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/tv_task_list_choose"));
+    }
+
+    public static boolean isListSectionDisplayed() {
+        androidIsDisplayed.isElementDisplayed(By.id("android:id/title"));
+        return true;
+    }
+
+    public static String isCancelBtnDisplayed() {
+        By cancelBtn = By.id("org.secuso.privacyfriendlytodolist:id/bt_process_task_cancel");
+        return AndroidIsTextDisplayed.getText(cancelBtn);
+    }
+
+    public static void clickOkayTaskBtn() {
+        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/bt_process_task_ok"));
     }
 
 }
