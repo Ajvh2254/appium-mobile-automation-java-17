@@ -129,13 +129,8 @@ public class AllTasksPage extends BaseAndroidPage {
                 "(//android.widget.RadioButton[@resource-id='org.secuso.privacyfriendlytodolist:id/radio'])[1]"));
     }
 
-    public static boolean isInstructionalFlashingDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/initial_alert"));
-        return true;
-    }
-
     public static String isNoTasksAvailableDisplayed() {
-        By noTasks = By.id("org.secuso.privacyfriendlytodolist:id/initial_alert");
+        By noTasks = By.id("org.secuso.privacyfriendlytodolist:id/tv_empty_view_no_tasks");
         return AndroidIsTextDisplayed.getText(noTasks);
     }
 
@@ -169,7 +164,7 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static void clickDeadlineBtn() {
-        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/et_task_description"));
+        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/tv_todo_list_deadline"));
     }
 
     public static void isPreviousMonthClickable() {
@@ -182,18 +177,19 @@ public class AllTasksPage extends BaseAndroidPage {
         }
     }
 
-    public static void clickNextMonthBtn() {
-        androidClick.click(AppiumBy.accessibilityId("Next month"));
+    public static void isNextMonthClickable() {
+        By nextMonth = AppiumBy.accessibilityId("Next month");
+        try {
+            AndroidWaiter.waitForElementToBeClickable(nextMonth);
+            log.info("{} is clickable", nextMonth);
+        } catch (Exception e) {
+            log.info("{} is not clickable", nextMonth);
+        }
     }
 
     public static String getCalendarMonth() {
         By calendarMonth = By.id("android:id/month_view");
-        log.info("{} is displyed", calendarMonth);
         return AndroidIsTextDisplayed.getText(calendarMonth);
-    }
-
-    public static void clickCalendarDateBtn() {
-        androidClick.click(AppiumBy.accessibilityId("21 January 2026"));
     }
 
     public static String isNoDeadlineBtnDisplayed() {
@@ -229,9 +225,9 @@ public class AllTasksPage extends BaseAndroidPage {
         dragAndDrop.dragAndDrop(progressSlider, 1266, 1767);
     }
 
-    public static boolean getProgressSliderPercentage() {
-        androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/tv_task_progress"));
-        return true;
+    public static String  getProgressSliderPercentage() {
+        By sliderPercentage = By.id("org.secuso.privacyfriendlytodolist:id/tv_task_progress");
+        return AndroidIsTextDisplayed.getText(sliderPercentage);
     }
 
     public static String isPriorityDisplayed() {
