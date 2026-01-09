@@ -15,10 +15,10 @@ import java.util.List;
 @Log4j2
 public class AllTasksPage extends BaseAndroidPage {
 
-    static By searchBtn = AppiumBy.accessibilityId("Search");
-    static By toDoListSearchBar = By.id("org.secuso.privacyfriendlytodolist:id/et_todo_list_name");
-    static By okayBtn = By.id("org.secuso.privacyfriendlytodolist:id/bt_todo_list_ok");
-    static By plusBtn = AppiumBy.accessibilityId("ADD NEW TASK >");
+    private static final By searchBtn = AppiumBy.accessibilityId("Search");
+    private static final By toDoListSearchBar = By.id("org.secuso.privacyfriendlytodolist:id/et_todo_list_name");
+    private static final By okayBtn = By.id("org.secuso.privacyfriendlytodolist:id/bt_todo_list_ok");
+    private static final By plusBtn = AppiumBy.accessibilityId("ADD NEW TASK >");
 
     public static void clickHamburgerMenuBtn() {
         androidClick.click(AppiumBy.accessibilityId("Open menu"));
@@ -42,9 +42,12 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static boolean isAllTasksHeaderDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.TextView[@text='All tasks']"));
-        return true;
+        try {
+            return androidIsDisplayed.isElementDisplayed(By.xpath(
+                    "//android.widget.TextView[@text='All tasks']"));
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static String isSearchBtnDisplayed() {
@@ -56,9 +59,12 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static boolean isSearchBarDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.id(
-                "org.secuso.privacyfriendlytodolist:id/search_src_text"));
-        return true;
+        try {
+            return androidIsDisplayed.isElementDisplayed(By.id(
+                    "org.secuso.privacyfriendlytodolist:id/search_src_text"));
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static void clickCollapseBtn() {
@@ -135,8 +141,11 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static boolean isAddNewTaskDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/second_alert"));
-        return true;
+        try {
+            return androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/second_alert"));
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static String isPlusBtnDisplayed() {
@@ -148,9 +157,16 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static boolean isNewToDoTaskDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.xpath(
-                "//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]"));
-        return true;
+        try {
+            try {
+                return androidIsDisplayed.isElementDisplayed(By.xpath(
+                        "//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]"));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static void sendNameKeys() {
@@ -202,9 +218,12 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static boolean isReminderBtnDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.id(
-                "org.secuso.privacyfriendlytodolist:id/tv_todo_list_reminder"));
-        return true;
+        try {
+            return androidIsDisplayed.isElementDisplayed(By.id(
+                    "org.secuso.privacyfriendlytodolist:id/tv_todo_list_reminder"));
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static void sendRecurrenceKeys() {
@@ -240,8 +259,11 @@ public class AllTasksPage extends BaseAndroidPage {
     }
 
     public static boolean isListSectionDisplayed() {
-        androidIsDisplayed.isElementDisplayed(By.id("android:id/title"));
-        return true;
+        try {
+            return androidIsDisplayed.isElementDisplayed(By.id("android:id/title"));
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static String isCancelBtnDisplayed() {
