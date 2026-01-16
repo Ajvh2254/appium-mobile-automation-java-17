@@ -158,12 +158,9 @@ public class AllTasksPage extends BaseAndroidPage {
 
     public static boolean isNewToDoTaskDisplayed() {
         try {
-            try {
-                return androidIsDisplayed.isElementDisplayed(By.xpath(
-                        "//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]"));
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            return androidIsDisplayed.isElementDisplayed(By.xpath(
+                    "//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]"));
+
         } catch (Exception e) {
             return false;
         }
@@ -244,7 +241,7 @@ public class AllTasksPage extends BaseAndroidPage {
         dragAndDrop.dragAndDrop(progressSlider, 1266, 1767);
     }
 
-    public static String  getProgressSliderPercentage() {
+    public static String getProgressSliderPercentage() {
         By sliderPercentage = By.id("org.secuso.privacyfriendlytodolist:id/tv_task_progress");
         return AndroidIsTextDisplayed.getText(sliderPercentage);
     }
