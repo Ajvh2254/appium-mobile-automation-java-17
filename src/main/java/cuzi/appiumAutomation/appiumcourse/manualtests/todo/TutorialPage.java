@@ -13,8 +13,6 @@ import java.util.List;
 @Log4j2
 public class TutorialPage extends BaseAndroidPage {
 
-    By nextBtn = By.id("org.secuso.privacyfriendlytodolist:id/btn_next");
-
     public String isWelcomeTextDisplayed() {
         By welcomeHeader = By.xpath("//*[@text='Welcome!']");
         // Using "current node" represented with an asterisk Example: //*[]
@@ -30,10 +28,6 @@ public class TutorialPage extends BaseAndroidPage {
     public boolean isSkipBtnDisplayed() {
         androidIsDisplayed.isElementDisplayed(By.id("org.secuso.privacyfriendlytodolist:id/btn_skip"));
         return true;
-    }
-
-    public static void clickSkipBtn() {
-        androidClick.click(By.id("org.secuso.privacyfriendlytodolist:id/btn_skip"));
     }
 
     public void isPageIndicatorDisplayed() {
@@ -54,10 +48,6 @@ public class TutorialPage extends BaseAndroidPage {
             log.info(nextBtn + " is not clickable");
             return false;
         }
-    }
-
-    public void clickNextBtn() {
-        androidClick.click(nextBtn);
     }
 
     public String isListsHeaderDisplayed() {
@@ -105,7 +95,8 @@ public class TutorialPage extends BaseAndroidPage {
     }
 
     public void clickOkayBtn() {
-        androidClick.click(nextBtn);
+        By okayBtn = By.id("org.secuso.privacyfriendlytodolist:id/btn_next");
+        androidClick.click(okayBtn);
     }
 
 }

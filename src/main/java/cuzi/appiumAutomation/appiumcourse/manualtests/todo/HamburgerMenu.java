@@ -3,7 +3,6 @@ package cuzi.appiumAutomation.appiumcourse.manualtests.todo;
 import cuzi.appiumAutomation.base.BaseAndroidPage;
 import cuzi.appiumAutomation.driver.AndroidDriverManager;
 import cuzi.appiumAutomation.utilities.androidutils.AndroidIsTextDisplayed;
-import io.appium.java_client.AppiumBy;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,20 +11,6 @@ import java.util.List;
 
 @Log4j2
 public class HamburgerMenu extends BaseAndroidPage {
-
-    public static void clickMoreOptionsBtn() {
-        By moreOptions = AppiumBy.accessibilityId("More options");
-        androidClick.click(moreOptions);
-    }
-
-    public static void isMoreOptionsListDisplayed() {
-        By options = By.xpath("//android.widget.ListView/android.widget.LinearLayout");
-        List<WebElement> moreOptions = AndroidDriverManager.getAndroidDriver().findElements(options);
-        for (int i = 0; i < moreOptions.size(); i++) {
-            AndroidDriverManager.getAndroidDriver().findElement(options).isEnabled();
-            log.info("{} is enabled", options);
-        }
-    }
 
     public static boolean isLineSeparationDisplayed() {
         By lineSeparation = By.xpath(
@@ -67,15 +52,15 @@ public class HamburgerMenu extends BaseAndroidPage {
         }
     }
 
-    public static void clickNavigateUpBtn() {
-        By navigateUpBtn = AppiumBy.accessibilityId("Navigate up");
-        androidClick.click(navigateUpBtn);
-    }
-
     public static void clickRecycleBtn() {
         By recycleBtn = By.xpath(
                 "//android.widget.CheckedTextView[@resource-id='org.secuso.privacyfriendlytodolist:id/design_menu_item_text' and @text='Recycle bin']");
         androidClick.click(recycleBtn);
+    }
+
+    public static String isRecycleBinHeaderDisplayed() {
+        By recycleBinHeader = By.xpath("//android.widget.TextView[@text='Recycle bin']");
+        return AndroidIsTextDisplayed.getText(recycleBinHeader);
     }
 
     public static void clickSettingsBtn() {
@@ -114,9 +99,9 @@ public class HamburgerMenu extends BaseAndroidPage {
         androidClick.click(exportDataBtn);
     }
 
-    public static String isDownloadsHeaderDisplayed() {
-        By downloadsHeader = By.xpath("(//android.widget.TextView[@text='Downloads'])[2]");
-        return AndroidIsTextDisplayed.getText(downloadsHeader);
+    public static String isDownloadsTextDisplayed() {
+        By downloadsText = By.id("com.google.android.documentsui:id/breadcrumb_text");
+        return AndroidIsTextDisplayed.getText(downloadsText);
     }
 
     public static void clickImportDataBtn() {
@@ -136,7 +121,7 @@ public class HamburgerMenu extends BaseAndroidPage {
         androidClick.click(tutorialBtn);
     }
 
-    public String isWelcomeTextDisplayed() {
+    public static String isWelcomeTextDisplayed() {
         By welcomeHeader = By.xpath("//*[@text='Welcome!']");
         return AndroidIsTextDisplayed.getText(welcomeHeader);
     }
@@ -163,6 +148,21 @@ public class HamburgerMenu extends BaseAndroidPage {
         List<WebElement> aboutPage = AndroidDriverManager.getAndroidDriver().findElements(about);
         for (int i = 0; i < aboutPage.size(); i++) {
             AndroidIsTextDisplayed.getText(about);
+        }
+    }
+
+    public static void clickActionBtn() {
+        By actionBtn = By.xpath(
+                "//android.widget.ImageButton[@resource-id='org.secuso.privacyfriendlytodolist:id/action_button']");
+        androidClick.click(actionBtn);
+    }
+
+    public static boolean isSelectOptionHeaderDisplayed() {
+        By selectOptionsHeader = By.xpath("//android.widget.TextView[@text='Select option']");
+        try {
+            return androidIsDisplayed.isElementDisplayed(selectOptionsHeader);
+        } catch (Exception e) {
+            return false;
         }
     }
 
