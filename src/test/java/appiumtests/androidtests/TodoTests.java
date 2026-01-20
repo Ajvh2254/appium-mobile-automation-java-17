@@ -97,6 +97,11 @@ public class TodoTests extends BaseTodoTests {
         CommonPage.clickNavigateUpBtn();
         CommonPage.clickHamburgerMenuBtn();
         HamburgerMenu.clickRecycleBtn();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(HamburgerMenu.isRecycleBinHeaderDisplayed(), "Recycle bin");
         CommonPage.clickNavigateUpBtn();
         CommonPage.clickHamburgerMenuBtn();
@@ -109,18 +114,38 @@ public class TodoTests extends BaseTodoTests {
         CommonPage.pressBackKey();
         CommonPage.clickHamburgerMenuBtn();
         HamburgerMenu.clickExportDataBtn();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 //        Assert.assertEquals(HamburgerMenu.isDownloadsTextDisplayed(), "Downloads");
         CommonPage.pressBackKey();
         CommonPage.clickHamburgerMenuBtn();
         HamburgerMenu.clickImportDataBtn();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(HamburgerMenu.isImportDataHeaderDisplayed(), "Delete existing data?");
         CommonPage.pressBackKey();
         CommonPage.clickHamburgerMenuBtn();
         HamburgerMenu.clickTutorialBtn();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(HamburgerMenu.isWelcomeTextDisplayed(), "Welcome!");
         CommonPage.clickSkipBtn();
         CommonPage.clickHamburgerMenuBtn();
         HamburgerMenu.clickHelpBtn();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Assert.assertEquals(HamburgerMenu.isHelpHeaderDisplayed(), "Help");
         CommonPage.clickNavigateUpBtn();
         CommonPage.clickHamburgerMenuBtn();
