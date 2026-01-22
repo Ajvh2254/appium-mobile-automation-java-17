@@ -20,25 +20,9 @@ public class AllTasksPage extends BaseAndroidPage {
     private static final By okayBtn = By.id("org.secuso.privacyfriendlytodolist:id/bt_todo_list_ok");
     private static final By plusBtn = AppiumBy.accessibilityId("ADD NEW TASK >");
 
-    public static void clickHamburgerMenuBtn() {
-        androidClick.click(AppiumBy.accessibilityId("Open menu"));
-    }
-
     public static String isHamburgerMenuHeaderDisplayed() {
         By hamburgerHeader = By.xpath("//android.widget.TextView[@text='To-Do']");
         return AndroidIsTextDisplayed.getText(hamburgerHeader);
-    }
-
-    public static void isHamburgerMenuDisplayed() {
-        By hamburgerIcons = By.xpath("//android.widget.CheckedTextView");
-        List<WebElement> hamburgerMenu = AndroidDriverManager.getAndroidDriver().findElements(hamburgerIcons);
-        for (int i = 0; i < hamburgerMenu.size(); i++) {
-            androidIsDisplayed.isElementDisplayed(hamburgerIcons);
-        }
-    }
-
-    public static void pressBackKey() {
-        pressKey.pressBackKey();
     }
 
     public static boolean isAllTasksHeaderDisplayed() {
@@ -158,12 +142,9 @@ public class AllTasksPage extends BaseAndroidPage {
 
     public static boolean isNewToDoTaskDisplayed() {
         try {
-            try {
-                return androidIsDisplayed.isElementDisplayed(By.xpath(
-                        "//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]"));
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            return androidIsDisplayed.isElementDisplayed(By.xpath(
+                    "//android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]"));
+
         } catch (Exception e) {
             return false;
         }
@@ -244,7 +225,7 @@ public class AllTasksPage extends BaseAndroidPage {
         dragAndDrop.dragAndDrop(progressSlider, 1266, 1767);
     }
 
-    public static String  getProgressSliderPercentage() {
+    public static String getProgressSliderPercentage() {
         By sliderPercentage = By.id("org.secuso.privacyfriendlytodolist:id/tv_task_progress");
         return AndroidIsTextDisplayed.getText(sliderPercentage);
     }
