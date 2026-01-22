@@ -58,6 +58,14 @@ public class HamburgerMenu extends BaseAndroidPage {
         androidClick.click(recycleBtn);
     }
 
+    public static void sleep() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static String isRecycleBinHeaderDisplayed() {
         By recycleBinHeader = By.xpath("//android.widget.TextView[@text='Recycle bin']");
         return AndroidIsTextDisplayed.getText(recycleBinHeader);
