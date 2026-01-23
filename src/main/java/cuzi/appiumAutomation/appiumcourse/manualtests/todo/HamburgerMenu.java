@@ -159,6 +159,16 @@ public class HamburgerMenu extends BaseAndroidPage {
         }
     }
 
+    public static boolean isActionBtnDisplayed() {
+        By actionBtn = By.xpath(
+                "//android.widget.ImageButton[@resource-id='org.secuso.privacyfriendlytodolist:id/action_button']");
+        try {
+            return androidIsDisplayed.isElementDisplayed(actionBtn);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public static void clickActionBtn() {
         By actionBtn = By.xpath(
                 "//android.widget.ImageButton[@resource-id='org.secuso.privacyfriendlytodolist:id/action_button']");
