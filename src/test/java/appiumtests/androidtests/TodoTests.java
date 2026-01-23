@@ -30,7 +30,7 @@ public class TodoTests extends BaseTodoTests {
         Assert.assertEquals(tutorialPage.isEverythingHeaderDisplayed(), "Everything is important");
         Assert.assertTrue(tutorialPage.isEverythingTextDisplayed());
         CommonPage.clickNextBtn();
-        Assert.assertEquals(tutorialPage.isSecureHeaderDisplayed(),"Secure");
+        Assert.assertEquals(tutorialPage.isSecureHeaderDisplayed(), "Secure");
         Assert.assertTrue(tutorialPage.isSecureTextDisplayed());
         tutorialPage.clickOkayBtn();
     }
@@ -81,6 +81,15 @@ public class TodoTests extends BaseTodoTests {
         CommonPage.pressBackKey();
         Assert.assertEquals(AllTasksPage.isCancelBtnDisplayed(), "CANCEL");
         AllTasksPage.clickOkayTaskBtn();
+    }
+
+    @Test
+    public void hamburgerMenuPageTest() {
+        CommonPage.clickSkipBtn();
+        CommonPage.clickHamburgerMenuBtn();
+        Assert.assertEquals(AllTasksPage.isHamburgerMenuHeaderDisplayed(), "To-Do");
+        CommonPage.isHamburgerMenuDisplayed();
+        Assert.assertTrue(HamburgerMenu.isActionBtnDisplayed());
     }
 
     @Test
