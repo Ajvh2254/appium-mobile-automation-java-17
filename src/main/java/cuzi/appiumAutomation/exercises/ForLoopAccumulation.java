@@ -3,8 +3,13 @@ package cuzi.appiumAutomation.exercises;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 
+/***
+ * Accumulating a total in a For-Loop
+ * Total is stored each time the loop iterates
+ */
+
 @Log4j2
-public class ForLoopTotals {
+public class ForLoopAccumulation {
 
     @Test(priority = 1)
     public void accumulateOneToFive() {

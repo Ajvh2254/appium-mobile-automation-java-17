@@ -3,8 +3,13 @@ package cuzi.appiumAutomation.exercises;
 import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.Test;
 
+/***
+ *Introduces variables to For-Loop
+ * Expression is stored in variables
+ */
+
 @Log4j2
-public class ForLoopValues {
+public class ForLoopAddIncrementalMath {
 
     @Test(priority = 1)
     public void storeAddTen() {
