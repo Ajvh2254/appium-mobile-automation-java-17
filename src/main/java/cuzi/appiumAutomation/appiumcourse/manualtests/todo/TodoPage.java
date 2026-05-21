@@ -10,17 +10,17 @@ import java.util.List;
 
 public class TodoPage extends BaseAndroidPage {
 
-    public boolean isWelcomeTextDisplayed() {
+    public static boolean isWelcomeTextDisplayed() {
         androidIsDisplayed.isElementDisplayed(By.xpath("//android.widget.TextView[@text='Welcome!']"));
         return true;
     }
 
-    public String isSkipBtnDisplayed() {
+    public static String isSkipBtnDisplayed() {
         By skipBtn = By.id("org.secuso.privacyfriendlytodolist:id/btn_skip");
         return AndroidIsTextDisplayed.getText(skipBtn);
     }
 
-    public void isPageIndicatorDisplayed() {
+    public static void isPageIndicatorDisplayed() {
         By pageIndicator = By.xpath("(//android.widget.TextView[@text='•'])");
         List<WebElement> pageIndicators = AndroidDriverManager.getAndroidDriver().findElements(pageIndicator);
         for (int i = 0; i < pageIndicators.size(); i++) {
@@ -28,7 +28,7 @@ public class TodoPage extends BaseAndroidPage {
         }
     }
 
-    public String isListsHeaderDisplayed() {
+    public static String isListsHeaderDisplayed() {
         By listsHeader = By.xpath("//android.widget.TextView[@text='Lists']");
         return AndroidIsTextDisplayed.getText(listsHeader);
     }

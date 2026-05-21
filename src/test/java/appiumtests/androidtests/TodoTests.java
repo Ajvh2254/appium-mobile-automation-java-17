@@ -147,4 +147,13 @@ public class TodoTests extends BaseTodoTests {
         CommonPage.pressBackKey();
     }
 
+    @Test
+    public void todoPageTest() {
+        Assert.assertTrue(TodoPage.isWelcomeTextDisplayed());
+        Assert.assertEquals(TodoPage.isSkipBtnDisplayed(), "SKIP");
+        TodoPage.isPageIndicatorDisplayed();
+        CommonPage.clickNextBtn();
+        Assert.assertEquals(TodoPage.isListsHeaderDisplayed(), "Lists");
+    }
+
 }
