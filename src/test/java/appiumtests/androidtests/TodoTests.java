@@ -154,6 +154,14 @@ public class TodoTests extends BaseTodoTests {
         TodoPage.isPageIndicatorDisplayed();
         CommonPage.clickNextBtn();
         Assert.assertEquals(TodoPage.isListsHeaderDisplayed(), "Lists");
+        CommonPage.clickNextBtn();
+        Assert.assertTrue(TodoPage.isReminderDescriptionDisplayed());
+        CommonPage.clickSkipBtn();
+        Assert.assertTrue(TodoPage.isAllTasksHeaderDisplayed());
+        TodoPage.clickPlusButton();
+        TodoPage.sendNameKeys();
+        Assert.assertEquals(TodoPage.isCancelBtnDisplayed(), "CANCEL");
+        TodoPage.clickOkayBtn();
     }
 
 }
